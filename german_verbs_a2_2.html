@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>German Verbs — A1 & A2 Reference</title>
+<style>
+  :root {
+    --bg: #fafaf8;
+    --surface: #ffffff;
+    --border: #e8e6e0;
+    --border2: #d4d1c8;
+    --text: #1a1a18;
+    --muted: #6b6960;
+    --faint: #9b9890;
+    --acc-blue: #1a5fa8;
+    --acc-blue-bg: #e8f0fb;
+    --acc-blue-border: #b3cef0;
+    --acc-green: #1a7a4a;
+    --acc-green-bg: #e6f5ed;
+    --acc-green-border: #9dd4b8;
+    --acc-amber: #8a5000;
+    --acc-amber-bg: #fef3e2;
+    --acc-amber-border: #f0c97a;
+    --acc-purple: #5a35a8;
+    --acc-purple-bg: #f0ecfb;
+    --acc-purple-border: #c5b4ee;
+    --acc-coral: #a03020;
+    --acc-coral-bg: #fbeee9;
+    --acc-coral-border: #e8b4a4;
+    --acc-teal: #1a7070;
+    --acc-teal-bg: #e6f5f5;
+    --acc-teal-border: #9dd4d4;
+    --radius: 8px;
+    --radius-sm: 5px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141412;
+      --surface: #1e1e1c;
+      --border: #2e2e2a;
+      --border2: #3e3e3a;
+      --text: #e8e6e0;
+      --muted: #9b9890;
+      --faint: #6b6960;
+      --acc-blue: #7ab0e8;
+      --acc-blue-bg: #0d2040;
+      --acc-blue-border: #1e4070;
+      --acc-green: #6abf8a;
+      --acc-green-bg: #0d2a1a;
+      --acc-green-border: #1a4a2e;
+      --acc-amber: #d4a040;
+      --acc-amber-bg: #2a1a00;
+      --acc-amber-border: #4a3000;
+      --acc-purple: #a080e0;
+      --acc-purple-bg: #1a1030;
+      --acc-purple-border: #2e1e58;
+      --acc-coral: #e08070;
+      --acc-coral-bg: #2a0e08;
+      --acc-coral-border: #4a1c14;
+      --acc-teal: #60c0c0;
+      --acc-teal-bg: #0a2020;
+      --acc-teal-border: #1a3a3a;
+    }
+  .b-refl { background: #2a0a30; color: #d090f0; border: 1px solid #5a2070; }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0 0 60px;
+  }
+  /* ── HEADER ── */
+  .header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 20px 0;
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: var(--shadow);
+  }
+  .header h1 { font-size: 18px; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 2px; }
+  .header p { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+  /* ── FILTER BAR ── */
+  .filters { display: flex; flex-wrap: wrap; gap: 6px; padding-bottom: 14px; }
+  .filter-group { display: flex; gap: 4px; }
+  .sep { width: 1px; background: var(--border); margin: 0 4px; }
+  button.f {
+    border: 1px solid var(--border2);
+    background: transparent;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 11px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all .15s;
+    white-space: nowrap;
+    font-family: inherit;
+  }
+  button.f:hover { color: var(--text); border-color: var(--text); }
+  button.f.active-all  { background: var(--text); color: var(--bg); border-color: var(--text); }
+  button.f.active-acc  { background: var(--acc-blue-bg); color: var(--acc-blue); border-color: var(--acc-blue-border); }
+  button.f.active-dat  { background: var(--acc-green-bg); color: var(--acc-green); border-color: var(--acc-green-border); }
+  button.f.active-both { background: var(--acc-amber-bg); color: var(--acc-amber); border-color: var(--acc-amber-border); }
+  button.f.active-modal{ background: var(--acc-purple-bg); color: var(--acc-purple); border-color: var(--acc-purple-border); }
+  button.f.active-sep  { background: var(--acc-teal-bg); color: var(--acc-teal); border-color: var(--acc-teal-border); }
+  button.f.active-irreg{ background: var(--acc-coral-bg); color: var(--acc-coral); border-color: var(--acc-coral-border); }
+  button.f.active-reg  { background: var(--acc-green-bg); color: var(--acc-green); border-color: var(--acc-green-border); }
+  button.f.active-refl { background: #fdf0fb; color: #7a2090; border-color: #d9a0e8; }
+  /* ── SEARCH ── */
+  .search-wrap { padding: 10px 20px 0; }
+  .search-wrap input {
+    width: 100%; padding: 8px 14px;
+    border: 1px solid var(--border2);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color .15s;
+  }
+  .search-wrap input:focus { border-color: var(--acc-blue); }
+  .search-wrap input::placeholder { color: var(--faint); }
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-size: 10px; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--faint);
+    padding: 18px 20px 6px;
+  }
+  /* ── VERB CARD ── */
+  .verb-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin: 0 20px 10px;
+    overflow: hidden;
+    transition: border-color .15s;
+  }
+  .verb-card:hover { border-color: var(--border2); }
+  .verb-head {
+    display: flex; align-items: center; gap: 8px;
+    padding: 12px 14px 10px;
+    cursor: pointer;
+    user-select: none;
+    gap: 10px;
+  }
+  .verb-name {
+    font-size: 15px; font-weight: 600; letter-spacing: -0.2px;
+    flex: 0 0 auto;
+  }
+  .verb-meaning {
+    font-size: 13px; color: var(--muted);
+    flex: 1 1 auto;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .badges { display: flex; gap: 5px; flex: 0 0 auto; }
+  .badge {
+    font-size: 10px; font-weight: 600; padding: 2px 7px;
+    border-radius: 10px; letter-spacing: .03em;
+    white-space: nowrap;
+  }
+  .b-reg   { background: var(--acc-green-bg);  color: var(--acc-green);  border: 1px solid var(--acc-green-border); }
+  .b-irreg { background: var(--acc-coral-bg);  color: var(--acc-coral);  border: 1px solid var(--acc-coral-border); }
+  .b-sep   { background: var(--acc-teal-bg);   color: var(--acc-teal);   border: 1px solid var(--acc-teal-border); }
+  .b-modal { background: var(--acc-purple-bg); color: var(--acc-purple); border: 1px solid var(--acc-purple-border); }
+  .b-acc   { background: var(--acc-blue-bg);   color: var(--acc-blue);   border: 1px solid var(--acc-blue-border); }
+  .b-dat   { background: var(--acc-green-bg);  color: var(--acc-green);  border: 1px solid var(--acc-green-border); }
+  .b-refl  { background: #fdf0fb; color: #7a2090; border: 1px solid #d9a0e8; }
+  .b-both  { background: var(--acc-amber-bg);  color: var(--acc-amber);  border: 1px solid var(--acc-amber-border); }
+  .chevron { margin-left: auto; color: var(--faint); font-size: 11px; transition: transform .2s; flex: 0 0 auto; }
+  .verb-card.open .chevron { transform: rotate(90deg); }
+  /* ── VERB BODY ── */
+  .verb-body { display: none; border-top: 1px solid var(--border); padding: 14px; }
+  .verb-card.open .verb-body { display: block; }
+  /* PP2 row */
+  .pp2-row { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+  .pp2-row strong { color: var(--text); }
+  /* Conjugation table */
+  .conj-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 12px; }
+  .conj-table th {
+    text-align: left; padding: 5px 8px;
+    background: var(--bg); color: var(--faint);
+    font-weight: 500; font-size: 11px;
+    border-bottom: 1px solid var(--border);
+  }
+  .conj-table td {
+    padding: 5px 8px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  .conj-table tr:last-child td { border-bottom: none; }
+  .conj-table .pronoun { color: var(--muted); width: 90px; }
+  .conj-table .form { font-weight: 500; }
+  /* Example */
+  .example-box {
+    background: var(--bg);
+    border-left: 3px solid var(--border2);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  .example-de { font-weight: 500; margin-bottom: 2px; }
+  .example-en { color: var(--muted); }
+  /* Note */
+  .note {
+    font-size: 11px; color: var(--muted);
+    margin-top: 8px; font-style: italic;
+  }
+  /* ── EMPTY STATE ── */
+  .empty { text-align: center; padding: 40px 20px; color: var(--faint); font-size: 13px; }
+  /* ── STATS BAR ── */
+  .stats { font-size: 11px; color: var(--faint); padding: 10px 20px 0; }
+  /* ── CHEATSHEET ── */
+  .cheat {
+    margin: 16px 20px 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .cheat-head {
+    padding: 10px 14px; font-size: 12px; font-weight: 600;
+    cursor: pointer; display: flex; justify-content: space-between;
+    align-items: center; background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    user-select: none;
+  }
+  .cheat-body { display: none; padding: 14px; }
+  .cheat.open .cheat-body { display: block; }
+  .cheat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 500px) { .cheat-grid { grid-template-columns: 1fr; } }
+  .cheat-section h4 { font-size: 11px; font-weight: 600; color: var(--faint); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+  .cheat-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .cheat-table th { text-align: left; font-weight: 600; padding: 4px 6px; color: var(--muted); font-size: 11px; border-bottom: 1px solid var(--border); }
+  .cheat-table td { padding: 4px 6px; border-bottom: 1px solid var(--border); }
+  .cheat-table tr:last-child td { border-bottom: none; }
+  .chip-list { display: flex; flex-wrap: wrap; gap: 4px; }
+  .chip {
+    font-size: 11px; padding: 2px 7px; border-radius: 10px;
+    background: var(--acc-green-bg); color: var(--acc-green);
+    border: 1px solid var(--acc-green-border); font-weight: 500;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>German Verbs — A1 &amp; A2</h1>
+  <p>Goethe-Zertifikat A2 Wortliste · All verb types · Cases · Conjugations · Examples</p>
+  <div class="filters">
+    <div class="filter-group">
+      <button class="f active-all" onclick="setFilter('all',this)">All</button>
+    </div>
+    <div class="sep"></div>
+    <div class="filter-group">
+      <button class="f" onclick="setFilter('acc',this)">🔵 Akkusativ</button>
+      <button class="f" onclick="setFilter('dat',this)">🟢 Dativ</button>
+      <button class="f" onclick="setFilter('both',this)">🟠 Akk + Dat</button>
+    </div>
+    <div class="sep"></div>
+    <div class="filter-group">
+      <button class="f" onclick="setFilter('reg',this)">Regular</button>
+      <button class="f" onclick="setFilter('irreg',this)">Irregular</button>
+      <button class="f" onclick="setFilter('sep',this)">Separable</button>
+      <button class="f" onclick="setFilter('modal',this)">Modal</button>
+      <button class="f" onclick="setFilter('refl',this)">Reflexive</button>
+    </div>
+  </div>
+</div>
+
+<div class="search-wrap">
+  <input type="text" id="search" placeholder="Search verb or meaning… e.g. kaufen, to buy" oninput="render()">
+</div>
+
+<div class="stats" id="stats"></div>
+<div id="cheat-container"></div>
+<div id="verb-list"></div>
+
+<script>
+const VERBS = [
+  // ─── AKKUSATIV ───────────────────────────────────────
+  { v:"haben", pp2:"gehabt", type:"irreg", case_:"acc", meaning:"to have",
+    conj:[["ich","habe"],["du","hast"],["er/sie/es","hat"],["wir","haben"],["ihr","habt"],["sie/Sie","haben"]],
+    de:"Ich habe einen Hund.", en:"I have a dog." },
+  { v:"sein", pp2:"gewesen", type:"irreg", case_:"acc", meaning:"to be",
+    conj:[["ich","bin"],["du","bist"],["er/sie/es","ist"],["wir","sind"],["ihr","seid"],["sie/Sie","sind"]],
+    de:"Er ist Mechaniker.", en:"He is a mechanic." },
+  { v:"werden", pp2:"geworden", type:"irreg", case_:"acc", meaning:"to become / will (future)",
+    conj:[["ich","werde"],["du","wirst"],["er/sie/es","wird"],["wir","werden"],["ihr","werdet"],["sie/Sie","werden"]],
+    de:"Mein Sohn will Arzt werden.", en:"My son wants to become a doctor." },
+  { v:"machen", pp2:"gemacht", type:"reg", case_:"acc", meaning:"to do / make",
+    conj:[["ich","mache"],["du","machst"],["er/sie/es","macht"],["wir","machen"],["ihr","macht"],["sie/Sie","machen"]],
+    de:"Er macht Hausaufgaben.", en:"He does homework." },
+  { v:"kaufen", pp2:"gekauft", type:"reg", case_:"acc", meaning:"to buy",
+    conj:[["ich","kaufe"],["du","kaufst"],["er/sie/es","kauft"],["wir","kaufen"],["ihr","kauft"],["sie/Sie","kaufen"]],
+    de:"Ich kaufe einen Apfel.", en:"I buy an apple." },
+  { v:"sehen", pp2:"gesehen", type:"irreg", case_:"acc", meaning:"to see",
+    conj:[["ich","sehe"],["du","siehst"],["er/sie/es","sieht"],["wir","sehen"],["ihr","seht"],["sie/Sie","sehen"]],
+    de:"Sie sieht einen Film.", en:"She watches a film." },
+  { v:"kennen", pp2:"gekannt", type:"irreg", case_:"acc", meaning:"to know (person/place)",
+    conj:[["ich","kenne"],["du","kennst"],["er/sie/es","kennt"],["wir","kennen"],["ihr","kennt"],["sie/Sie","kennen"]],
+    de:"Ich kenne diesen Mann.", en:"I know this man." },
+  { v:"kennenlernen", pp2:"kennengelernt", type:"sep", case_:"acc", meaning:"to get to know / meet",
+    conj:[["ich","lerne … kennen"],["du","lernst … kennen"],["er/sie/es","lernt … kennen"],["wir","lernen … kennen"],["ihr","lernt … kennen"],["sie/Sie","lernen … kennen"]],
+    de:"Wo habt ihr euch kennengelernt?", en:"Where did you meet each other?" },
+  { v:"wissen", pp2:"gewusst", type:"irreg", case_:"acc", meaning:"to know (a fact)",
+    conj:[["ich","weiß"],["du","weißt"],["er/sie/es","weiß"],["wir","wissen"],["ihr","wisst"],["sie/Sie","wissen"]],
+    de:"Ich weiß die Antwort.", en:"I know the answer." },
+  { v:"lieben", pp2:"geliebt", type:"reg", case_:"acc", meaning:"to love",
+    conj:[["ich","liebe"],["du","liebst"],["er/sie/es","liebt"],["wir","lieben"],["ihr","liebt"],["sie/Sie","lieben"]],
+    de:"Er liebt seine Frau.", en:"He loves his wife." },
+  { v:"brauchen", pp2:"gebraucht", type:"reg", case_:"acc", meaning:"to need",
+    conj:[["ich","brauche"],["du","brauchst"],["er/sie/es","braucht"],["wir","brauchen"],["ihr","braucht"],["sie/Sie","brauchen"]],
+    de:"Ich brauche einen Stift.", en:"I need a pen." },
+  { v:"lesen", pp2:"gelesen", type:"irreg", case_:"acc", meaning:"to read",
+    conj:[["ich","lese"],["du","liest"],["er/sie/es","liest"],["wir","lesen"],["ihr","lest"],["sie/Sie","lesen"]],
+    de:"Sie liest ein Buch.", en:"She reads a book." },
+  { v:"trinken", pp2:"getrunken", type:"irreg", case_:"acc", meaning:"to drink",
+    conj:[["ich","trinke"],["du","trinkst"],["er/sie/es","trinkt"],["wir","trinken"],["ihr","trinkt"],["sie/Sie","trinken"]],
+    de:"Er trinkt einen Kaffee.", en:"He drinks a coffee." },
+  { v:"essen", pp2:"gegessen", type:"irreg", case_:"acc", meaning:"to eat",
+    conj:[["ich","esse"],["du","isst"],["er/sie/es","isst"],["wir","essen"],["ihr","esst"],["sie/Sie","essen"]],
+    de:"Wir essen einen Kuchen.", en:"We eat a cake." },
+  { v:"schreiben", pp2:"geschrieben", type:"irreg", case_:"acc", meaning:"to write",
+    conj:[["ich","schreibe"],["du","schreibst"],["er/sie/es","schreibt"],["wir","schreiben"],["ihr","schreibt"],["sie/Sie","schreiben"]],
+    de:"Ich schreibe einen Brief.", en:"I write a letter." },
+  { v:"nehmen", pp2:"genommen", type:"irreg", case_:"acc", meaning:"to take",
+    conj:[["ich","nehme"],["du","nimmst"],["er/sie/es","nimmt"],["wir","nehmen"],["ihr","nehmt"],["sie/Sie","nehmen"]],
+    de:"Sie nimmt den Bus.", en:"She takes the bus." },
+  { v:"finden", pp2:"gefunden", type:"irreg", case_:"acc", meaning:"to find / think (opinion)",
+    conj:[["ich","finde"],["du","findest"],["er/sie/es","findet"],["wir","finden"],["ihr","findet"],["sie/Sie","finden"]],
+    de:"Ich finde den Schlüssel.", en:"I find the key." },
+  { v:"hören", pp2:"gehört", type:"reg", case_:"acc", meaning:"to hear / listen to",
+    conj:[["ich","höre"],["du","hörst"],["er/sie/es","hört"],["wir","hören"],["ihr","hört"],["sie/Sie","hören"]],
+    de:"Ich höre Musik.", en:"I listen to music." },
+  { v:"verstehen", pp2:"verstanden", type:"irreg", case_:"acc", meaning:"to understand",
+    conj:[["ich","verstehe"],["du","verstehst"],["er/sie/es","versteht"],["wir","verstehen"],["ihr","versteht"],["sie/Sie","verstehen"]],
+    de:"Er versteht die Frage.", en:"He understands the question." },
+  { v:"lernen", pp2:"gelernt", type:"reg", case_:"acc", meaning:"to learn / study",
+    conj:[["ich","lerne"],["du","lernst"],["er/sie/es","lernt"],["wir","lernen"],["ihr","lernt"],["sie/Sie","lernen"]],
+    de:"Sie lernt Deutsch.", en:"She learns German." },
+  { v:"suchen", pp2:"gesucht", type:"reg", case_:"acc", meaning:"to look for / search",
+    conj:[["ich","suche"],["du","suchst"],["er/sie/es","sucht"],["wir","suchen"],["ihr","sucht"],["sie/Sie","suchen"]],
+    de:"Ich suche meinen Schlüssel.", en:"I'm looking for my key." },
+  { v:"besuchen", pp2:"besucht", type:"reg", case_:"acc", meaning:"to visit",
+    conj:[["ich","besuche"],["du","besuchst"],["er/sie/es","besucht"],["wir","besuchen"],["ihr","besucht"],["sie/Sie","besuchen"]],
+    de:"Wir besuchen unsere Eltern.", en:"We visit our parents." },
+  { v:"bezahlen", pp2:"bezahlt", type:"reg", case_:"acc", meaning:"to pay for",
+    conj:[["ich","bezahle"],["du","bezahlst"],["er/sie/es","bezahlt"],["wir","bezahlen"],["ihr","bezahlt"],["sie/Sie","bezahlen"]],
+    de:"Er bezahlt die Rechnung.", en:"He pays the bill." },
+  { v:"zahlen", pp2:"gezahlt", type:"reg", case_:"acc", meaning:"to pay",
+    conj:[["ich","zahle"],["du","zahlst"],["er/sie/es","zahlt"],["wir","zahlen"],["ihr","zahlt"],["sie/Sie","zahlen"]],
+    de:"Entschuldigung, zahlen bitte!", en:"Excuse me, the bill please!" },
+  { v:"spielen", pp2:"gespielt", type:"reg", case_:"acc", meaning:"to play",
+    conj:[["ich","spiele"],["du","spielst"],["er/sie/es","spielt"],["wir","spielen"],["ihr","spielt"],["sie/Sie","spielen"]],
+    de:"Die Kinder spielen Fußball.", en:"The children play football." },
+  { v:"tragen", pp2:"getragen", type:"irreg", case_:"acc", meaning:"to wear / carry",
+    conj:[["ich","trage"],["du","trägst"],["er/sie/es","trägt"],["wir","tragen"],["ihr","tragt"],["sie/Sie","tragen"]],
+    de:"Sie trägt eine rote Jacke.", en:"She wears a red jacket." },
+  { v:"beginnen", pp2:"begonnen", type:"irreg", case_:"acc", meaning:"to begin / start",
+    conj:[["ich","beginne"],["du","beginnst"],["er/sie/es","beginnt"],["wir","beginnen"],["ihr","beginnt"],["sie/Sie","beginnen"]],
+    de:"Er beginnt die Arbeit.", en:"He begins the work." },
+  { v:"vergessen", pp2:"vergessen", type:"irreg", case_:"acc", meaning:"to forget",
+    conj:[["ich","vergesse"],["du","vergisst"],["er/sie/es","vergisst"],["wir","vergessen"],["ihr","vergesst"],["sie/Sie","vergessen"]],
+    de:"Ich vergesse den Termin.", en:"I forget the appointment." },
+  { v:"bekommen", pp2:"bekommen", type:"irreg", case_:"acc", meaning:"to receive / get",
+    conj:[["ich","bekomme"],["du","bekommst"],["er/sie/es","bekommt"],["wir","bekommen"],["ihr","bekommt"],["sie/Sie","bekommen"]],
+    de:"Haben Sie meinen Brief bekommen?", en:"Did you receive my letter?" },
+  { v:"bestellen", pp2:"bestellt", type:"reg", case_:"acc", meaning:"to order",
+    conj:[["ich","bestelle"],["du","bestellst"],["er/sie/es","bestellt"],["wir","bestellen"],["ihr","bestellt"],["sie/Sie","bestellen"]],
+    de:"Wir möchten bitte bestellen.", en:"We would like to order please." },
+  { v:"braten", pp2:"gebraten", type:"irreg", case_:"acc", meaning:"to fry / roast",
+    conj:[["ich","brate"],["du","brätst"],["er/sie/es","brät"],["wir","braten"],["ihr","bratet"],["sie/Sie","braten"]],
+    de:"Braten Sie das Fleisch in etwas Öl!", en:"Fry the meat in a little oil!" },
+  { v:"buchen", pp2:"gebucht", type:"reg", case_:"acc", meaning:"to book",
+    conj:[["ich","buche"],["du","buchst"],["er/sie/es","bucht"],["wir","buchen"],["ihr","bucht"],["sie/Sie","buchen"]],
+    de:"Morgen buche ich unsere Urlaubsreise.", en:"Tomorrow I'll book our holiday trip." },
+  { v:"denken", pp2:"gedacht", type:"irreg", case_:"acc", meaning:"to think",
+    conj:[["ich","denke"],["du","denkst"],["er/sie/es","denkt"],["wir","denken"],["ihr","denkt"],["sie/Sie","denken"]],
+    de:"Ich denke, du hast recht.", en:"I think you are right." },
+  { v:"drucken", pp2:"gedruckt", type:"reg", case_:"acc", meaning:"to print",
+    conj:[["ich","drucke"],["du","druckst"],["er/sie/es","druckt"],["wir","drucken"],["ihr","druckt"],["sie/Sie","drucken"]],
+    de:"Wahle einfach 'Datei drucken'!", en:"Just select Print file!" },
+  { v:"erzählen", pp2:"erzählt", type:"reg", case_:"acc", meaning:"to tell / narrate",
+    conj:[["ich","erzähle"],["du","erzählst"],["er/sie/es","erzählt"],["wir","erzählen"],["ihr","erzählt"],["sie/Sie","erzählen"]],
+    de:"Erzählst du mir eine Geschichte?", en:"Will you tell me a story?" },
+  { v:"fahren", pp2:"gefahren", type:"irreg", case_:"acc", meaning:"to drive / travel",
+    conj:[["ich","fahre"],["du","fährst"],["er/sie/es","fährt"],["wir","fahren"],["ihr","fahrt"],["sie/Sie","fahren"]],
+    de:"Ich fahre mit dem Auto zur Arbeit.", en:"I drive to work by car." },
+  { v:"fragen", pp2:"gefragt", type:"reg", case_:"acc", meaning:"to ask",
+    conj:[["ich","frage"],["du","fragst"],["er/sie/es","fragt"],["wir","fragen"],["ihr","fragt"],["sie/Sie","fragen"]],
+    de:"Ich möchte Sie etwas fragen.", en:"I'd like to ask you something." },
+  { v:"fotografieren", pp2:"fotografiert", type:"reg", case_:"acc", meaning:"to photograph",
+    conj:[["ich","fotografiere"],["du","fotografierst"],["er/sie/es","fotografiert"],["wir","fotografieren"],["ihr","fotografiert"],["sie/Sie","fotografieren"]],
+    de:"Darf ich ein Foto machen?", en:"May I take a photo?" },
+  { v:"gehen", pp2:"gegangen", type:"irreg", case_:"acc", meaning:"to go / walk",
+    conj:[["ich","gehe"],["du","gehst"],["er/sie/es","geht"],["wir","gehen"],["ihr","geht"],["sie/Sie","gehen"]],
+    de:"Ich gehe jetzt nach Hause.", en:"I'm going home now." },
+  { v:"heiraten", pp2:"geheiratet", type:"reg", case_:"acc", meaning:"to marry",
+    conj:[["ich","heirate"],["du","heiratest"],["er/sie/es","heiratet"],["wir","heiraten"],["ihr","heiratet"],["sie/Sie","heiraten"]],
+    de:"Meine Schwester heiratet nächsten Monat.", en:"My sister is getting married next month." },
+  { v:"heißen", pp2:"geheißen", type:"irreg", case_:"acc", meaning:"to be called / named",
+    conj:[["ich","heiße"],["du","heißt"],["er/sie/es","heißt"],["wir","heißen"],["ihr","heißt"],["sie/Sie","heißen"]],
+    de:"Ich heiße Charlotte Meier.", en:"My name is Charlotte Meier." },
+  { v:"holen", pp2:"geholt", type:"reg", case_:"acc", meaning:"to fetch / get",
+    conj:[["ich","hole"],["du","holst"],["er/sie/es","holt"],["wir","holen"],["ihr","holt"],["sie/Sie","holen"]],
+    de:"Soll ich uns etwas zu trinken holen?", en:"Shall I get us something to drink?" },
+  { v:"informieren", pp2:"informiert", type:"reg", case_:"acc", meaning:"to find out (about)",
+    refl:true,
+    conj:[["ich","informiere"],["du","informierst"],["er/sie/es","informiert"],["wir","informieren"],["ihr","informiert"],["sie/Sie","informieren"]],
+    de:"Ich möchte mich über das Land informieren.", en:"I'd like to find out about the country." },
+  { v:"kochen", pp2:"gekocht", type:"reg", case_:"acc", meaning:"to cook",
+    conj:[["ich","koche"],["du","kochst"],["er/sie/es","kocht"],["wir","kochen"],["ihr","kocht"],["sie/Sie","kochen"]],
+    de:"Herr Georgi kann gut kochen.", en:"Mr. Georgi can cook well." },
+  { v:"kontrollieren", pp2:"kontrolliert", type:"reg", case_:"acc", meaning:"to check / inspect",
+    conj:[["ich","kontrolliere"],["du","kontrollierst"],["er/sie/es","kontrolliert"],["wir","kontrollieren"],["ihr","kontrolliert"],["sie/Sie","kontrollieren"]],
+    de:"Können Sie bitte das Öl kontrollieren?", en:"Could you please check the oil?" },
+  { v:"lachen", pp2:"gelacht", type:"reg", case_:"acc", meaning:"to laugh",
+    conj:[["ich","lache"],["du","lachst"],["er/sie/es","lacht"],["wir","lachen"],["ihr","lacht"],["sie/Sie","lachen"]],
+    de:"Die Kinder lachen über den Witz.", en:"The children laugh at the joke." },
+  { v:"lassen", pp2:"gelassen", type:"irreg", case_:"acc", meaning:"to let / leave",
+    conj:[["ich","lasse"],["du","lässt"],["er/sie/es","lässt"],["wir","lassen"],["ihr","lasst"],["sie/Sie","lassen"]],
+    de:"Lass mich in Ruhe!", en:"Leave me alone!" },
+  { v:"laufen", pp2:"gelaufen", type:"irreg", case_:"acc", meaning:"to run / walk",
+    conj:[["ich","laufe"],["du","läufst"],["er/sie/es","läuft"],["wir","laufen"],["ihr","lauft"],["sie/Sie","laufen"]],
+    de:"Ich gehe jeden Morgen laufen.", en:"I go running every morning." },
+  { v:"leben", pp2:"gelebt", type:"reg", case_:"acc", meaning:"to live",
+    conj:[["ich","lebe"],["du","lebst"],["er/sie/es","lebt"],["wir","leben"],["ihr","lebt"],["sie/Sie","leben"]],
+    de:"Sie lebt bei ihrer Schwester.", en:"She lives with her sister." },
+  { v:"legen", pp2:"gelegt", type:"reg", case_:"acc", meaning:"to put / lay down",
+    conj:[["ich","lege"],["du","legst"],["er/sie/es","legt"],["wir","legen"],["ihr","legt"],["sie/Sie","legen"]],
+    de:"Legen Sie das Buch auf den Tisch.", en:"Put the book on the table." },
+  { v:"liefern", pp2:"geliefert", type:"reg", case_:"acc", meaning:"to deliver",
+    conj:[["ich","liefere"],["du","lieferst"],["er/sie/es","liefert"],["wir","liefern"],["ihr","liefert"],["sie/Sie","liefern"]],
+    de:"Wir liefern Ihnen den Schrank nach Hause.", en:"We'll deliver the cupboard to your home." },
+  { v:"liegen", pp2:"gelegen", type:"irreg", case_:"acc", meaning:"to lie / be located",
+    conj:[["ich","liege"],["du","liegst"],["er/sie/es","liegt"],["wir","liegen"],["ihr","liegt"],["sie/Sie","liegen"]],
+    de:"Die Zeitung liegt auf dem Tisch.", en:"The newspaper is on the table." },
+  { v:"lügen", pp2:"gelogen", type:"irreg", case_:"acc", meaning:"to lie (tell untruth)",
+    conj:[["ich","lüge"],["du","lügst"],["er/sie/es","lügt"],["wir","lügen"],["ihr","lügt"],["sie/Sie","lügen"]],
+    de:"Du sollst nicht lügen.", en:"You shall not lie." },
+  { v:"malen", pp2:"gemalt", type:"reg", case_:"acc", meaning:"to paint / draw",
+    conj:[["ich","male"],["du","malst"],["er/sie/es","malt"],["wir","malen"],["ihr","malt"],["sie/Sie","malen"]],
+    de:"Mein Sohn kann gut malen.", en:"My son can paint well." },
+  { v:"meinen", pp2:"gemeint", type:"reg", case_:"acc", meaning:"to mean / think / be of opinion",
+    conj:[["ich","meine"],["du","meinst"],["er/sie/es","meint"],["wir","meinen"],["ihr","meint"],["sie/Sie","meinen"]],
+    de:"Wie meinst du das?", en:"What do you mean by that?" },
+  { v:"merken", pp2:"gemerkt", type:"reg", case_:"acc", meaning:"to notice / remember",
+    conj:[["ich","merke"],["du","merkst"],["er/sie/es","merkt"],["wir","merken"],["ihr","merkt"],["sie/Sie","merken"]],
+    de:"Ich kann mir keine Zahlen merken.", en:"I can't remember numbers." },
+  { v:"mieten", pp2:"gemietet", type:"reg", case_:"acc", meaning:"to rent",
+    conj:[["ich","miete"],["du","mietest"],["er/sie/es","mietet"],["wir","mieten"],["ihr","mietet"],["sie/Sie","mieten"]],
+    de:"Ich möchte ein Auto mieten.", en:"I'd like to rent a car." },
+  { v:"mögen", pp2:"gemocht", type:"irreg", case_:"acc", meaning:"to like",
+    conj:[["ich","mag"],["du","magst"],["er/sie/es","mag"],["wir","mögen"],["ihr","mögt"],["sie/Sie","mögen"]],
+    de:"Magst du Schokolade?", en:"Do you like chocolate?" },
+  { v:"nennen", pp2:"genannt", type:"irreg", case_:"acc", meaning:"to call / name",
+    conj:[["ich","nenne"],["du","nennst"],["er/sie/es","nennt"],["wir","nennen"],["ihr","nennt"],["sie/Sie","nennen"]],
+    de:"Alle nennen ihn Alex.", en:"Everyone calls him Alex." },
+  { v:"notieren", pp2:"notiert", type:"reg", case_:"acc", meaning:"to note down",
+    conj:[["ich","notiere"],["du","notierst"],["er/sie/es","notiert"],["wir","notieren"],["ihr","notiert"],["sie/Sie","notieren"]],
+    de:"Notieren Sie bitte alle wichtigen Informationen.", en:"Please note down all important information." },
+  { v:"öffnen", pp2:"geöffnet", type:"reg", case_:"acc", meaning:"to open",
+    conj:[["ich","öffne"],["du","öffnest"],["er/sie/es","öffnet"],["wir","öffnen"],["ihr","öffnet"],["sie/Sie","öffnen"]],
+    de:"Ich öffne die Tür.", en:"I open the door." },
+  { v:"organisieren", pp2:"organisiert", type:"reg", case_:"acc", meaning:"to organise",
+    conj:[["ich","organisiere"],["du","organisierst"],["er/sie/es","organisiert"],["wir","organisieren"],["ihr","organisiert"],["sie/Sie","organisieren"]],
+    de:"Frau Gomez organisiert unseren Ausflug.", en:"Ms. Gomez is organising our trip." },
+  { v:"packen", pp2:"gepackt", type:"reg", case_:"acc", meaning:"to pack",
+    conj:[["ich","packe"],["du","packst"],["er/sie/es","packt"],["wir","packen"],["ihr","packt"],["sie/Sie","packen"]],
+    de:"Ich muss noch meinen Koffer packen.", en:"I still need to pack my suitcase." },
+  { v:"parken", pp2:"geparkt", type:"reg", case_:"acc", meaning:"to park",
+    conj:[["ich","parke"],["du","parkst"],["er/sie/es","parkt"],["wir","parken"],["ihr","parkt"],["sie/Sie","parken"]],
+    de:"Darf ich hier parken?", en:"May I park here?" },
+  { v:"planen", pp2:"geplant", type:"reg", case_:"acc", meaning:"to plan",
+    conj:[["ich","plane"],["du","planst"],["er/sie/es","plant"],["wir","planen"],["ihr","plant"],["sie/Sie","planen"]],
+    de:"Wir sollen zusammen eine Party planen.", en:"We should plan a party together." },
+  { v:"probieren", pp2:"probiert", type:"reg", case_:"acc", meaning:"to try / taste",
+    conj:[["ich","probiere"],["du","probierst"],["er/sie/es","probiert"],["wir","probieren"],["ihr","probiert"],["sie/Sie","probieren"]],
+    de:"Möchten Sie den Käse probieren?", en:"Would you like to try the cheese?" },
+  { v:"prüfen", pp2:"geprüft", type:"reg", case_:"acc", meaning:"to check / verify",
+    conj:[["ich","prüfe"],["du","prüfst"],["er/sie/es","prüft"],["wir","prüfen"],["ihr","prüft"],["sie/Sie","prüfen"]],
+    de:"Bitte prüfen Sie die Rechnung sofort.", en:"Please check the bill immediately." },
+  { v:"putzen", pp2:"geputzt", type:"reg", case_:"acc", meaning:"to clean",
+    conj:[["ich","putze"],["du","putzt"],["er/sie/es","putzt"],["wir","putzen"],["ihr","putzt"],["sie/Sie","putzen"]],
+    de:"Ich muss heute noch das Bad putzen.", en:"I still need to clean the bathroom today." },
+  { v:"raten", pp2:"geraten", type:"irreg", case_:"acc", meaning:"to advise / guess",
+    conj:[["ich","rate"],["du","rätst"],["er/sie/es","rät"],["wir","raten"],["ihr","ratet"],["sie/Sie","raten"]],
+    de:"Was raten Sie mir?", en:"What do you advise me?" },
+  { v:"rauchen", pp2:"geraucht", type:"reg", case_:"acc", meaning:"to smoke",
+    conj:[["ich","rauche"],["du","rauchst"],["er/sie/es","raucht"],["wir","rauchen"],["ihr","raucht"],["sie/Sie","rauchen"]],
+    de:"Rauchen ist hier verboten!", en:"Smoking is forbidden here!" },
+  { v:"rechnen", pp2:"gerechnet", type:"reg", case_:"acc", meaning:"to calculate",
+    conj:[["ich","rechne"],["du","rechnest"],["er/sie/es","rechnet"],["wir","rechnen"],["ihr","rechnet"],["sie/Sie","rechnen"]],
+    de:"Sarah kann gut rechnen.", en:"Sarah is good at maths." },
+  { v:"reden", pp2:"geredet", type:"reg", case_:"acc", meaning:"to talk / speak",
+    conj:[["ich","rede"],["du","redest"],["er/sie/es","redet"],["wir","reden"],["ihr","redet"],["sie/Sie","reden"]],
+    de:"Mit meiner Freundin kann ich über alles reden.", en:"I can talk to my friend about anything." },
+  { v:"regnen", pp2:"geregnet", type:"reg", case_:"acc", meaning:"to rain",
+    conj:[["—","—"],["—","—"],["es","regnet"],["—","—"],["—","—"],["—","—"]],
+    de:"Wenn es regnet, bleiben wir zu Hause.", en:"When it rains, we stay at home.",
+    note:"Only used impersonally: es regnet." },
+  { v:"renovieren", pp2:"renoviert", type:"reg", case_:"acc", meaning:"to renovate",
+    conj:[["ich","renoviere"],["du","renovierst"],["er/sie/es","renoviert"],["wir","renovieren"],["ihr","renoviert"],["sie/Sie","renovieren"]],
+    de:"Wir renovieren das ganze Haus.", en:"We are renovating the whole house." },
+  { v:"reparieren", pp2:"repariert", type:"reg", case_:"acc", meaning:"to repair",
+    conj:[["ich","repariere"],["du","reparierst"],["er/sie/es","repariert"],["wir","reparieren"],["ihr","repariert"],["sie/Sie","reparieren"]],
+    de:"Er muss den Motor reparieren.", en:"He needs to repair the engine." },
+  { v:"reservieren", pp2:"reserviert", type:"reg", case_:"acc", meaning:"to reserve",
+    conj:[["ich","reserviere"],["du","reservierst"],["er/sie/es","reserviert"],["wir","reservieren"],["ihr","reserviert"],["sie/Sie","reservieren"]],
+    de:"Ich möchte einen Tisch für fünf Personen reservieren.", en:"I'd like to reserve a table for five." },
+  { v:"riechen", pp2:"gerochen", type:"irreg", case_:"acc", meaning:"to smell",
+    conj:[["ich","rieche"],["du","riechst"],["er/sie/es","riecht"],["wir","riechen"],["ihr","riecht"],["sie/Sie","riechen"]],
+    de:"Diese Blumen riechen gut.", en:"These flowers smell good." },
+  { v:"rufen", pp2:"gerufen", type:"irreg", case_:"acc", meaning:"to call / shout",
+    conj:[["ich","rufe"],["du","rufst"],["er/sie/es","ruft"],["wir","rufen"],["ihr","ruft"],["sie/Sie","rufen"]],
+    de:"Wir müssen einen Arzt rufen.", en:"We need to call a doctor." },
+  { v:"sammeln", pp2:"gesammelt", type:"reg", case_:"acc", meaning:"to collect",
+    conj:[["ich","sammle"],["du","sammelst"],["er/sie/es","sammelt"],["wir","sammeln"],["ihr","sammelt"],["sie/Sie","sammeln"]],
+    de:"Peter sammelt Briefmarken.", en:"Peter collects stamps." },
+  { v:"schaffen", pp2:"geschafft", type:"reg", case_:"acc", meaning:"to manage / accomplish",
+    conj:[["ich","schaffe"],["du","schaffst"],["er/sie/es","schafft"],["wir","schaffen"],["ihr","schafft"],["sie/Sie","schaffen"]],
+    de:"Ich schaffe das nicht alleine.", en:"I can't manage that alone." },
+  { v:"schlafen", pp2:"geschlafen", type:"irreg", case_:"acc", meaning:"to sleep",
+    conj:[["ich","schlafe"],["du","schläfst"],["er/sie/es","schläft"],["wir","schlafen"],["ihr","schlaft"],["sie/Sie","schlafen"]],
+    de:"Ich schlafe meistens acht Stunden.", en:"I usually sleep eight hours." },
+  { v:"schließen", pp2:"geschlossen", type:"irreg", case_:"acc", meaning:"to close / lock",
+    conj:[["ich","schließe"],["du","schließt"],["er/sie/es","schließt"],["wir","schließen"],["ihr","schließt"],["sie/Sie","schließen"]],
+    de:"Bitte schließen Sie die Tür.", en:"Please close the door." },
+  { v:"schwimmen", pp2:"geschwommen", type:"irreg", case_:"acc", meaning:"to swim",
+    conj:[["ich","schwimme"],["du","schwimmst"],["er/sie/es","schwimmt"],["wir","schwimmen"],["ihr","schwimmt"],["sie/Sie","schwimmen"]],
+    de:"Ich schwimme täglich einen Kilometer.", en:"I swim a kilometre every day." },
+  { v:"setzen", pp2:"gesetzt", type:"reg", case_:"acc", meaning:"to sit down",
+    refl:true,
+    conj:[["ich","setze"],["du","setzt"],["er/sie/es","setzt"],["wir","setzen"],["ihr","setzt"],["sie/Sie","setzen"]],
+    de:"Setz dich doch!", en:"Do sit down!" },
+  { v:"singen", pp2:"gesungen", type:"irreg", case_:"acc", meaning:"to sing",
+    conj:[["ich","singe"],["du","singst"],["er/sie/es","singt"],["wir","singen"],["ihr","singt"],["sie/Sie","singen"]],
+    de:"Er singt gern.", en:"He likes to sing." },
+  { v:"sitzen", pp2:"gesessen", type:"irreg", case_:"acc", meaning:"to sit",
+    conj:[["ich","sitze"],["du","sitzt"],["er/sie/es","sitzt"],["wir","sitzen"],["ihr","sitzt"],["sie/Sie","sitzen"]],
+    de:"Wo möchten Sie sitzen?", en:"Where would you like to sit?" },
+  { v:"sparen", pp2:"gespart", type:"reg", case_:"acc", meaning:"to save (money)",
+    conj:[["ich","spare"],["du","sparst"],["er/sie/es","spart"],["wir","sparen"],["ihr","spart"],["sie/Sie","sparen"]],
+    de:"Ein neues Auto ist teuer. Ich muss sparen.", en:"A new car is expensive. I need to save." },
+  { v:"speichern", pp2:"gespeichert", type:"reg", case_:"acc", meaning:"to save (file)",
+    conj:[["ich","speichere"],["du","speicherst"],["er/sie/es","speichert"],["wir","speichern"],["ihr","speichert"],["sie/Sie","speichern"]],
+    de:"Sie müssen die Datei speichern.", en:"You need to save the file." },
+  { v:"sprechen", pp2:"gesprochen", type:"irreg", case_:"acc", meaning:"to speak",
+    conj:[["ich","spreche"],["du","sprichst"],["er/sie/es","spricht"],["wir","sprechen"],["ihr","sprecht"],["sie/Sie","sprechen"]],
+    de:"Kann ich Herrn Klein sprechen?", en:"Can I speak to Mr. Klein?" },
+  { v:"stehen", pp2:"gestanden", type:"irreg", case_:"acc", meaning:"to stand / say (in text)",
+    conj:[["ich","stehe"],["du","stehst"],["er/sie/es","steht"],["wir","stehen"],["ihr","steht"],["sie/Sie","stehen"]],
+    de:"Was steht heute in der Zeitung?", en:"What does it say in the newspaper today?" },
+  { v:"sterben", pp2:"gestorben", type:"irreg", case_:"acc", meaning:"to die",
+    conj:[["ich","sterbe"],["du","stirbst"],["er/sie/es","stirbt"],["wir","sterben"],["ihr","sterbt"],["sie/Sie","sterben"]],
+    de:"Sein Vater ist gestern gestorben.", en:"His father died yesterday." },
+  { v:"stören", pp2:"gestört", type:"reg", case_:"acc", meaning:"to disturb / bother",
+    conj:[["ich","störe"],["du","störst"],["er/sie/es","stört"],["wir","stören"],["ihr","stört"],["sie/Sie","stören"]],
+    de:"Störe ich?", en:"Am I disturbing you?" },
+  { v:"streiten", pp2:"gestritten", type:"irreg", case_:"acc", meaning:"to argue (with)",
+    refl:true,
+    conj:[["ich","streite"],["du","streitest"],["er/sie/es","streitet"],["wir","streiten"],["ihr","streitet"],["sie/Sie","streiten"]],
+    de:"Die Kinder streiten sich oft.", en:"The children often argue." },
+  { v:"studieren", pp2:"studiert", type:"reg", case_:"acc", meaning:"to study (university)",
+    conj:[["ich","studiere"],["du","studierst"],["er/sie/es","studiert"],["wir","studieren"],["ihr","studiert"],["sie/Sie","studieren"]],
+    de:"Ich studiere in Mainz.", en:"I study in Mainz." },
+  { v:"surfen", pp2:"gesurft", type:"reg", case_:"acc", meaning:"to surf / browse",
+    conj:[["ich","surfe"],["du","surfst"],["er/sie/es","surft"],["wir","surfen"],["ihr","surft"],["sie/Sie","surfen"]],
+    de:"Surfst du oft im Internet?", en:"Do you often browse the internet?" },
+  { v:"tanzen", pp2:"getanzt", type:"reg", case_:"acc", meaning:"to dance",
+    conj:[["ich","tanze"],["du","tanzt"],["er/sie/es","tanzt"],["wir","tanzen"],["ihr","tanzt"],["sie/Sie","tanzen"]],
+    de:"Tanzen Sie gern?", en:"Do you like dancing?" },
+  { v:"teilen", pp2:"geteilt", type:"reg", case_:"acc", meaning:"to share / divide",
+    conj:[["ich","teile"],["du","teilst"],["er/sie/es","teilt"],["wir","teilen"],["ihr","teilt"],["sie/Sie","teilen"]],
+    de:"Wollen wir die Pizza teilen?", en:"Shall we share the pizza?" },
+  { v:"telefonieren", pp2:"telefoniert", type:"reg", case_:"acc", meaning:"to make a phone call",
+    conj:[["ich","telefoniere"],["du","telefonierst"],["er/sie/es","telefoniert"],["wir","telefonieren"],["ihr","telefoniert"],["sie/Sie","telefonieren"]],
+    de:"Ich muss kurz telefonieren.", en:"I need to make a quick call." },
+  { v:"trainieren", pp2:"trainiert", type:"reg", case_:"acc", meaning:"to train / practise",
+    conj:[["ich","trainiere"],["du","trainierst"],["er/sie/es","trainiert"],["wir","trainieren"],["ihr","trainiert"],["sie/Sie","trainieren"]],
+    de:"Wir trainieren einmal pro Woche.", en:"We train once a week." },
+  { v:"träumen", pp2:"geträumt", type:"reg", case_:"acc", meaning:"to dream",
+    conj:[["ich","träume"],["du","träumst"],["er/sie/es","träumt"],["wir","träumen"],["ihr","träumt"],["sie/Sie","träumen"]],
+    de:"Ich träume von einem großen Haus.", en:"I dream of a big house." },
+  { v:"treffen", pp2:"getroffen", type:"irreg", case_:"acc", meaning:"to meet (with)",
+    refl:true,
+    conj:[["ich","treffe"],["du","triffst"],["er/sie/es","trifft"],["wir","treffen"],["ihr","trefft"],["sie/Sie","treffen"]],
+    de:"Wir treffen uns immer freitags.", en:"We always meet on Fridays." },
+  { v:"tun", pp2:"getan", type:"irreg", case_:"acc", meaning:"to do",
+    conj:[["ich","tue"],["du","tust"],["er/sie/es","tut"],["wir","tun"],["ihr","tut"],["sie/Sie","tun"]],
+    de:"Was kann ich für Sie tun?", en:"What can I do for you?" },
+  { v:"üben", pp2:"geübt", type:"reg", case_:"acc", meaning:"to practise",
+    conj:[["ich","übe"],["du","übst"],["er/sie/es","übt"],["wir","üben"],["ihr","übt"],["sie/Sie","üben"]],
+    de:"Ich übe jeden Tag zwei Stunden Gitarre.", en:"I practise guitar for two hours every day." },
+  { v:"übernachten", pp2:"übernachtet", type:"reg", case_:"acc", meaning:"to stay overnight",
+    conj:[["ich","übernachte"],["du","übernachtest"],["er/sie/es","übernachtet"],["wir","übernachten"],["ihr","übernachtet"],["sie/Sie","übernachten"]],
+    de:"Du kannst bei mir übernachten.", en:"You can stay overnight at my place." },
+  { v:"übersetzen", pp2:"übersetzt", type:"reg", case_:"acc", meaning:"to translate",
+    conj:[["ich","übersetze"],["du","übersetzt"],["er/sie/es","übersetzt"],["wir","übersetzen"],["ihr","übersetzt"],["sie/Sie","übersetzen"]],
+    de:"Können Sie mir den Brief übersetzen?", en:"Can you translate the letter for me?" },
+  { v:"überweisen", pp2:"überwiesen", type:"irreg", case_:"acc", meaning:"to transfer money",
+    conj:[["ich","überweise"],["du","überweist"],["er/sie/es","überweist"],["wir","überweisen"],["ihr","überweist"],["sie/Sie","überweisen"]],
+    de:"Ich überweise dir das Geld.", en:"I'll transfer the money to you." },
+  { v:"verdienen", pp2:"verdient", type:"reg", case_:"acc", meaning:"to earn",
+    conj:[["ich","verdiene"],["du","verdienst"],["er/sie/es","verdient"],["wir","verdienen"],["ihr","verdient"],["sie/Sie","verdienen"]],
+    de:"Ich verdiene 1.500 Euro im Monat.", en:"I earn 1,500 euros a month." },
+  { v:"vergleichen", pp2:"verglichen", type:"irreg", case_:"acc", meaning:"to compare",
+    conj:[["ich","vergleiche"],["du","vergleichst"],["er/sie/es","vergleicht"],["wir","vergleichen"],["ihr","vergleicht"],["sie/Sie","vergleichen"]],
+    de:"Vergleichen Sie die Angebote!", en:"Compare the offers!" },
+  { v:"verlieren", pp2:"verloren", type:"irreg", case_:"acc", meaning:"to lose",
+    conj:[["ich","verliere"],["du","verlierst"],["er/sie/es","verliert"],["wir","verlieren"],["ihr","verliert"],["sie/Sie","verlieren"]],
+    de:"Ich habe meinen Schlüssel verloren.", en:"I have lost my key." },
+  { v:"vermieten", pp2:"vermietet", type:"reg", case_:"acc", meaning:"to rent out",
+    conj:[["ich","vermiete"],["du","vermietest"],["er/sie/es","vermietet"],["wir","vermieten"],["ihr","vermietet"],["sie/Sie","vermieten"]],
+    de:"Die Wohnung ist schon vermietet.", en:"The flat is already rented out." },
+  { v:"verpassen", pp2:"verpasst", type:"reg", case_:"acc", meaning:"to miss (bus/train)",
+    conj:[["ich","verpasse"],["du","verpasst"],["er/sie/es","verpasst"],["wir","verpassen"],["ihr","verpasst"],["sie/Sie","verpassen"]],
+    de:"Ich habe den Zug verpasst.", en:"I missed the train." },
+  { v:"verreisen", pp2:"verreist", type:"reg", case_:"acc", meaning:"to go on a trip",
+    conj:[["ich","verreise"],["du","verreist"],["er/sie/es","verreist"],["wir","verreisen"],["ihr","verreist"],["sie/Sie","verreisen"]],
+    de:"Verreist ihr in den Ferien?", en:"Are you going away in the holidays?" },
+  { v:"verschieben", pp2:"verschoben", type:"irreg", case_:"acc", meaning:"to postpone",
+    conj:[["ich","verschiebe"],["du","verschiebst"],["er/sie/es","verschiebt"],["wir","verschieben"],["ihr","verschiebt"],["sie/Sie","verschieben"]],
+    de:"Leider muss ich den Termin verschieben.", en:"Unfortunately I need to postpone the appointment." },
+  { v:"versuchen", pp2:"versucht", type:"reg", case_:"acc", meaning:"to try / attempt",
+    conj:[["ich","versuche"],["du","versuchst"],["er/sie/es","versucht"],["wir","versuchen"],["ihr","versucht"],["sie/Sie","versuchen"]],
+    de:"Kann ich es auch einmal versuchen?", en:"Can I try it too?" },
+  { v:"wählen", pp2:"gewählt", type:"reg", case_:"acc", meaning:"to choose / dial / vote",
+    conj:[["ich","wähle"],["du","wählst"],["er/sie/es","wählt"],["wir","wählen"],["ihr","wählt"],["sie/Sie","wählen"]],
+    de:"Wählen Sie bitte ein Getränk.", en:"Please choose a drink." },
+  { v:"wandern", pp2:"gewandert", type:"reg", case_:"acc", meaning:"to hike",
+    conj:[["ich","wandere"],["du","wanderst"],["er/sie/es","wandert"],["wir","wandern"],["ihr","wandert"],["sie/Sie","wandern"]],
+    de:"Wir gehen oft wandern.", en:"We often go hiking." },
+  { v:"warten", pp2:"gewartet", type:"reg", case_:"acc", meaning:"to wait",
+    conj:[["ich","warte"],["du","wartest"],["er/sie/es","wartet"],["wir","warten"],["ihr","wartet"],["sie/Sie","warten"]],
+    de:"Können Sie ein paar Minuten warten?", en:"Can you wait a few minutes?" },
+  { v:"waschen", pp2:"gewaschen", type:"irreg", case_:"acc", meaning:"to wash (oneself)",
+    refl:true,
+    conj:[["ich","wasche"],["du","wäschst"],["er/sie/es","wäscht"],["wir","waschen"],["ihr","wascht"],["sie/Sie","waschen"]],
+    de:"Wo kann ich mir die Hände waschen?", en:"Where can I wash my hands?" },
+  { v:"wecken", pp2:"geweckt", type:"reg", case_:"acc", meaning:"to wake someone",
+    conj:[["ich","wecke"],["du","weckst"],["er/sie/es","weckt"],["wir","wecken"],["ihr","weckt"],["sie/Sie","wecken"]],
+    de:"Bitte wecken Sie mich morgen früh um fünf.", en:"Please wake me tomorrow morning at five." },
+  { v:"weinen", pp2:"geweint", type:"reg", case_:"acc", meaning:"to cry",
+    conj:[["ich","weine"],["du","weinst"],["er/sie/es","weint"],["wir","weinen"],["ihr","weint"],["sie/Sie","weinen"]],
+    de:"Warum weint das Baby?", en:"Why is the baby crying?" },
+  { v:"wünschen", pp2:"gewünscht", type:"reg", case_:"acc", meaning:"to wish",
+    conj:[["ich","wünsche"],["du","wünschst"],["er/sie/es","wünscht"],["wir","wünschen"],["ihr","wünscht"],["sie/Sie","wünschen"]],
+    de:"Ich wünsche mir eine Kamera zum Geburtstag.", en:"I wish for a camera for my birthday." },
+  { v:"zeichnen", pp2:"gezeichnet", type:"reg", case_:"acc", meaning:"to draw",
+    conj:[["ich","zeichne"],["du","zeichnest"],["er/sie/es","zeichnet"],["wir","zeichnen"],["ihr","zeichnet"],["sie/Sie","zeichnen"]],
+    de:"Caterina kann gut zeichnen.", en:"Caterina can draw well." },
+  { v:"ziehen", pp2:"gezogen", type:"irreg", case_:"acc", meaning:"to pull / move house",
+    conj:[["ich","ziehe"],["du","ziehst"],["er/sie/es","zieht"],["wir","ziehen"],["ihr","zieht"],["sie/Sie","ziehen"]],
+    de:"Nächsten Monat ziehen wir um.", en:"Next month we are moving house." },
+  { v:"ändern", pp2:"geändert", type:"reg", case_:"acc", meaning:"to change",
+    conj:[["ich","ändere"],["du","änderst"],["er/sie/es","ändert"],["wir","ändern"],["ihr","ändert"],["sie/Sie","ändern"]],
+    de:"Das Wetter hat sich geändert.", en:"The weather has changed." },
+  { v:"ärgern", pp2:"geärgert", type:"reg", case_:"acc", meaning:"to be annoyed (about)",
+    refl:true,
+    conj:[["ich","ärgere"],["du","ärgerst"],["er/sie/es","ärgert"],["wir","ärgern"],["ihr","ärgert"],["sie/Sie","ärgern"]],
+    de:"Warum ärgerst du dich?", en:"Why are you annoyed?" },
+  { v:"arbeiten", pp2:"gearbeitet", type:"reg", case_:"acc", meaning:"to work",
+    conj:[["ich","arbeite"],["du","arbeitest"],["er/sie/es","arbeitet"],["wir","arbeiten"],["ihr","arbeitet"],["sie/Sie","arbeiten"]],
+    de:"Wo arbeiten Sie?", en:"Where do you work?" },
+  { v:"backen", pp2:"gebacken", type:"irreg", case_:"acc", meaning:"to bake",
+    conj:[["ich","backe"],["du","bäckst"],["er/sie/es","bäckt"],["wir","backen"],["ihr","backt"],["sie/Sie","backen"]],
+    de:"Wenn du kommst, backe ich einen Kuchen.", en:"When you come, I'll bake a cake." },
+  { v:"basteln", pp2:"gebastelt", type:"reg", case_:"acc", meaning:"to do crafts",
+    conj:[["ich","bastle"],["du","bastelst"],["er/sie/es","bastelt"],["wir","basteln"],["ihr","bastelt"],["sie/Sie","basteln"]],
+    de:"Die Kinder haben etwas gebastelt.", en:"The children made something (craft)." },
+  { v:"bauen", pp2:"gebaut", type:"reg", case_:"acc", meaning:"to build",
+    conj:[["ich","baue"],["du","baust"],["er/sie/es","baut"],["wir","bauen"],["ihr","baut"],["sie/Sie","bauen"]],
+    de:"Unsere Nachbarn bauen ein neues Haus.", en:"Our neighbours are building a new house." },
+  { v:"chatten", pp2:"gechattet", type:"reg", case_:"acc", meaning:"to chat (online)",
+    conj:[["ich","chatte"],["du","chattest"],["er/sie/es","chattet"],["wir","chatten"],["ihr","chattet"],["sie/Sie","chatten"]],
+    de:"Luis chattet gern mit seinen Freunden.", en:"Luis likes chatting with his friends online." },
+  { v:"dauern", pp2:"gedauert", type:"reg", case_:"acc", meaning:"to last / take time",
+    conj:[["—","—"],["—","—"],["es","dauert"],["—","—"],["—","—"],["—","—"]],
+    de:"Wie lange dauert die Pause?", en:"How long does the break last?",
+    note:"Mostly used with es or a time subject: Die Pause dauert." },
+  { v:"diskutieren", pp2:"diskutiert", type:"reg", case_:"acc", meaning:"to discuss",
+    conj:[["ich","diskutiere"],["du","diskutierst"],["er/sie/es","diskutiert"],["wir","diskutieren"],["ihr","diskutiert"],["sie/Sie","diskutieren"]],
+    de:"Ich möchte das mit meinen Kollegen diskutieren.", en:"I'd like to discuss this with my colleagues." },
+  { v:"drücken", pp2:"gedrückt", type:"reg", case_:"acc", meaning:"to press / push",
+    conj:[["ich","drücke"],["du","drückst"],["er/sie/es","drückt"],["wir","drücken"],["ihr","drückt"],["sie/Sie","drücken"]],
+    de:"An dieser Tür musst du drücken, nicht ziehen.", en:"At this door you must push, not pull." },
+  { v:"duschen", pp2:"geduscht", type:"reg", case_:"acc", meaning:"to shower",
+    refl:true,
+    conj:[["ich","dusche"],["du","duschst"],["er/sie/es","duscht"],["wir","duschen"],["ihr","duscht"],["sie/Sie","duschen"]],
+    de:"Ich bade nicht gern, ich dusche lieber.", en:"I don't like bathing, I prefer showering." },
+  { v:"feiern", pp2:"gefeiert", type:"reg", case_:"acc", meaning:"to celebrate",
+    conj:[["ich","feiere"],["du","feierst"],["er/sie/es","feiert"],["wir","feiern"],["ihr","feiert"],["sie/Sie","feiern"]],
+    de:"Wir feiern heute meinen Geburtstag.", en:"We are celebrating my birthday today." },
+  { v:"freuen", pp2:"gefreut", type:"reg", case_:"acc", meaning:"to look forward to / be happy about",
+    refl:true,
+    conj:[["ich","freue"],["du","freust"],["er/sie/es","freut"],["wir","freuen"],["ihr","freut"],["sie/Sie","freuen"]],
+    de:"Ich freue mich sehr über das Geschenk.", en:"I'm very happy about the gift." },
+  { v:"frühstücken", pp2:"gefrühstückt", type:"reg", case_:"acc", meaning:"to have breakfast",
+    conj:[["ich","frühstücke"],["du","frühstückst"],["er/sie/es","frühstückt"],["wir","frühstücken"],["ihr","frühstückt"],["sie/Sie","frühstücken"]],
+    de:"Ich frühstücke immer um 9:00 Uhr.", en:"I always have breakfast at 9 o'clock." },
+  { v:"fühlen", pp2:"gefühlt", type:"reg", case_:"acc", meaning:"to feel",
+    refl:true,
+    conj:[["ich","fühle"],["du","fühlst"],["er/sie/es","fühlt"],["wir","fühlen"],["ihr","fühlt"],["sie/Sie","fühlen"]],
+    de:"Ich fühle mich heute nicht gut.", en:"I don't feel well today." },
+  { v:"grillen", pp2:"gegrillt", type:"reg", case_:"acc", meaning:"to barbecue / grill",
+    conj:[["ich","grille"],["du","grillst"],["er/sie/es","grillt"],["wir","grillen"],["ihr","grillt"],["sie/Sie","grillen"]],
+    de:"Heute grillen wir im Garten.", en:"Today we are barbecuing in the garden." },
+  { v:"halten", pp2:"gehalten", type:"irreg", case_:"acc", meaning:"to stop / hold",
+    conj:[["ich","halte"],["du","hältst"],["er/sie/es","hält"],["wir","halten"],["ihr","haltet"],["sie/Sie","halten"]],
+    de:"Dieser Zug hält nicht in Rüdesheim.", en:"This train doesn't stop in Rüdesheim." },
+  { v:"hängen", pp2:"gehangen/gehängt", type:"irreg", case_:"acc", meaning:"to hang (be hanging / put up)",
+    conj:[["ich","hänge"],["du","hängst"],["er/sie/es","hängt"],["wir","hängen"],["ihr","hängt"],["sie/Sie","hängen"]],
+    de:"Im Museum hängen moderne Bilder.", en:"Modern pictures hang in the museum.",
+    note:"hängen/gehangen = intransitive (it hangs). hängen/gehängt = transitive (you hung it)." },
+  { v:"hoffen", pp2:"gehofft", type:"reg", case_:"acc", meaning:"to hope",
+    conj:[["ich","hoffe"],["du","hoffst"],["er/sie/es","hofft"],["wir","hoffen"],["ihr","hofft"],["sie/Sie","hoffen"]],
+    de:"Ich hoffe, dass es dir gut geht.", en:"I hope you are well." },
+  { v:"husten", pp2:"gehustet", type:"reg", case_:"acc", meaning:"to cough",
+    conj:[["ich","huste"],["du","hustest"],["er/sie/es","hustet"],["wir","husten"],["ihr","hustet"],["sie/Sie","husten"]],
+    de:"Sie hustet seit zwei Tagen.", en:"She has been coughing for two days." },
+  { v:"joggen", pp2:"gejoggt", type:"reg", case_:"acc", meaning:"to jog",
+    conj:[["ich","jogge"],["du","joggst"],["er/sie/es","joggt"],["wir","joggen"],["ihr","joggt"],["sie/Sie","joggen"]],
+    de:"Ich jogge gern im Park.", en:"I like jogging in the park." },
+  { v:"fallen", pp2:"gefallen", type:"irreg", case_:"acc", meaning:"to fall",
+    conj:[["ich","falle"],["du","fällst"],["er/sie/es","fällt"],["wir","fallen"],["ihr","fallt"],["sie/Sie","fallen"]],
+    de:"Pass auf, das Glas fällt gleich vom Tisch!", en:"Watch out, the glass is about to fall off the table!" },
+  { v:"kümmern", pp2:"gekümmert", type:"reg", case_:"acc", meaning:"to take care of",
+    refl:true,
+    conj:[["ich","kümmere"],["du","kümmerst"],["er/sie/es","kümmert"],["wir","kümmern"],["ihr","kümmert"],["sie/Sie","kümmern"]],
+    de:"Ich muss mich um das Essen kümmern.", en:"I need to take care of the food." },
+  { v:"kündigen", pp2:"gekündigt", type:"reg", case_:"acc", meaning:"to quit / give notice",
+    conj:[["ich","kündige"],["du","kündigst"],["er/sie/es","kündigt"],["wir","kündigen"],["ihr","kündigt"],["sie/Sie","kündigen"]],
+    de:"Meine Arbeit gefällt mir nicht mehr. Ich habe gekündigt.", en:"I don't like my job anymore. I have quit." },
+  { v:"vereinbaren", pp2:"vereinbart", type:"reg", case_:"acc", meaning:"to arrange / agree on",
+    conj:[["ich","vereinbare"],["du","vereinbarst"],["er/sie/es","vereinbart"],["wir","vereinbaren"],["ihr","vereinbart"],["sie/Sie","vereinbaren"]],
+    de:"Können wir einen Termin vereinbaren?", en:"Can we arrange an appointment?" },
+  { v:"benutzen", pp2:"benutzt", type:"reg", case_:"acc", meaning:"to use",
+    conj:[["ich","benutze"],["du","benutzt"],["er/sie/es","benutzt"],["wir","benutzen"],["ihr","benutzt"],["sie/Sie","benutzen"]],
+    de:"Die Aufzüge bitte nicht benutzen!", en:"Please do not use the lifts!" },
+  { v:"bedeuten", pp2:"bedeutet", type:"reg", case_:"acc", meaning:"to mean",
+    conj:[["ich","bedeute"],["du","bedeutest"],["er/sie/es","bedeutet"],["wir","bedeuten"],["ihr","bedeutet"],["sie/Sie","bedeuten"]],
+    de:"Was bedeutet das Wort?", en:"What does the word mean?" },
+  { v:"beschreiben", pp2:"beschrieben", type:"irreg", case_:"acc", meaning:"to describe",
+    conj:[["ich","beschreibe"],["du","beschreibst"],["er/sie/es","beschreibt"],["wir","beschreiben"],["ihr","beschreibt"],["sie/Sie","beschreiben"]],
+    de:"Kannst du mir den Weg zum Bahnhof beschreiben?", en:"Can you describe the way to the station?" },
+  { v:"besichtigen", pp2:"besichtigt", type:"reg", case_:"acc", meaning:"to visit sights / view",
+    conj:[["ich","besichtige"],["du","besichtigst"],["er/sie/es","besichtigt"],["wir","besichtigen"],["ihr","besichtigt"],["sie/Sie","besichtigen"]],
+    de:"Ich möchte gern das Schloss besichtigen.", en:"I'd like to visit the castle." },
+  { v:"bestehen", pp2:"bestanden", type:"irreg", case_:"acc", meaning:"to pass (exam) / consist of",
+    conj:[["ich","bestehe"],["du","bestehst"],["er/sie/es","besteht"],["wir","bestehen"],["ihr","besteht"],["sie/Sie","bestehen"]],
+    de:"Ich habe die Prüfung bestanden!", en:"I passed the exam!" },
+  { v:"bewerben", pp2:"beworben", type:"irreg", case_:"acc", meaning:"to apply (for a job)",
+    refl:true,
+    conj:[["ich","bewerbe"],["du","bewirbst"],["er/sie/es","bewirbt"],["wir","bewerben"],["ihr","bewirbt"],["sie/Sie","bewerben"]],
+    de:"Ich möchte mich um diese Stelle bewerben.", en:"I'd like to apply for this position." },
+  { v:"bleiben", pp2:"geblieben", type:"irreg", case_:"acc", meaning:"to stay / remain",
+    conj:[["ich","bleibe"],["du","bleibst"],["er/sie/es","bleibt"],["wir","bleiben"],["ihr","bleibt"],["sie/Sie","bleiben"]],
+    de:"Ich bleibe heute zu Hause.", en:"I'm staying home today." },
+  { v:"erinnern", pp2:"erinnert", type:"reg", case_:"acc", meaning:"to remember",
+    refl:true,
+    conj:[["ich","erinnere"],["du","erinnerst"],["er/sie/es","erinnert"],["wir","erinnern"],["ihr","erinnert"],["sie/Sie","erinnern"]],
+    de:"Erinnerst du dich an José?", en:"Do you remember José?" },
+  { v:"erlauben", pp2:"erlaubt", type:"reg", case_:"acc", meaning:"to allow / permit",
+    conj:[["ich","erlaube"],["du","erlaubst"],["er/sie/es","erlaubt"],["wir","erlauben"],["ihr","erlaubt"],["sie/Sie","erlauben"]],
+    de:"Ich habe es ihnen erlaubt.", en:"I allowed them to do it." },
+  { v:"erreichen", pp2:"erreicht", type:"reg", case_:"acc", meaning:"to reach / catch",
+    conj:[["ich","erreiche"],["du","erreichst"],["er/sie/es","erreicht"],["wir","erreichen"],["ihr","erreicht"],["sie/Sie","erreichen"]],
+    de:"Wenn wir uns beeilen, erreichen wir noch den Zug.", en:"If we hurry, we can still catch the train." },
+  { v:"beantworten", pp2:"beantwortet", type:"reg", case_:"acc", meaning:"to answer (question/email)",
+    conj:[["ich","beantworte"],["du","beantwortest"],["er/sie/es","beantwortet"],["wir","beantworten"],["ihr","beantwortet"],["sie/Sie","beantworten"]],
+    de:"Hast du die Mail schon beantwortet?", en:"Have you already answered the email?" },
+  { v:"bedanken", pp2:"bedankt", type:"reg", case_:"acc", meaning:"to say thank you (to/for)",
+    refl:true,
+    conj:[["ich","bedanke"],["du","bedankst"],["er/sie/es","bedankt"],["wir","bedanken"],["ihr","bedankt"],["sie/Sie","bedanken"]],
+    de:"Ich möchte mich herzlich für Ihre Hilfe bedanken.", en:"I'd like to sincerely thank you for your help." },
+  { v:"beeilen", pp2:"beeilt", type:"reg", case_:"acc", meaning:"to hurry",
+    refl:true,
+    conj:[["ich","beeile"],["du","beeilst"],["er/sie/es","beeilt"],["wir","beeilen"],["ihr","beeilt"],["sie/Sie","beeilen"]],
+    de:"Kannst du dich bitte beeilen?", en:"Can you please hurry?" },
+  { v:"beenden", pp2:"beendet", type:"reg", case_:"acc", meaning:"to finish / end",
+    conj:[["ich","beende"],["du","beendest"],["er/sie/es","beendet"],["wir","beenden"],["ihr","beendet"],["sie/Sie","beenden"]],
+    de:"Du musst deine Ausbildung auf jeden Fall beenden.", en:"You absolutely must finish your training." },
+  { v:"begründen", pp2:"begründet", type:"reg", case_:"acc", meaning:"to justify / give reasons",
+    conj:[["ich","begründe"],["du","begründest"],["er/sie/es","begründet"],["wir","begründen"],["ihr","begründet"],["sie/Sie","begründen"]],
+    de:"Bitte begründen Sie Ihre Meinung.", en:"Please justify your opinion." },
+  { v:"beraten", pp2:"beraten", type:"irreg", case_:"acc", meaning:"to advise / consult",
+    conj:[["ich","berate"],["du","berätst"],["er/sie/es","berät"],["wir","beraten"],["ihr","beratet"],["sie/Sie","beraten"]],
+    de:"Unsere Sekretärin berät Sie gern.", en:"Our secretary is happy to advise you." },
+  { v:"berichten", pp2:"berichtet", type:"reg", case_:"acc", meaning:"to report",
+    conj:[["ich","berichte"],["du","berichtest"],["er/sie/es","berichtet"],["wir","berichten"],["ihr","berichtet"],["sie/Sie","berichten"]],
+    de:"Alle Zeitungen berichten von dem Unfall.", en:"All newspapers are reporting on the accident." },
+  { v:"beschweren", pp2:"beschwert", type:"reg", case_:"acc", meaning:"to complain (about)",
+    refl:true,
+    conj:[["ich","beschwere"],["du","beschwerst"],["er/sie/es","beschwert"],["wir","beschweren"],["ihr","beschwert"],["sie/Sie","beschweren"]],
+    de:"Hier ist es zu laut. Wo können wir uns beschweren?", en:"It's too noisy here. Where can we complain?" },
+  { v:"bestätigen", pp2:"bestätigt", type:"reg", case_:"acc", meaning:"to confirm",
+    conj:[["ich","bestätige"],["du","bestätigst"],["er/sie/es","bestätigt"],["wir","bestätigen"],["ihr","bestätigt"],["sie/Sie","bestätigen"]],
+    de:"Ich kann bestätigen, dass er hier war.", en:"I can confirm that he was here." },
+  { v:"buchstabieren", pp2:"buchstabiert", type:"reg", case_:"acc", meaning:"to spell",
+    conj:[["ich","buchstabiere"],["du","buchstabierst"],["er/sie/es","buchstabiert"],["wir","buchstabieren"],["ihr","buchstabiert"],["sie/Sie","buchstabieren"]],
+    de:"Würden Sie bitte Ihren Namen buchstabieren?", en:"Could you please spell your name?" },
+  { v:"unterhalten", pp2:"unterhalten", type:"irreg", case_:"acc", meaning:"to chat (with/about)",
+    refl:true,
+    conj:[["ich","unterhalte"],["du","unterhältst"],["er/sie/es","unterhält"],["wir","unterhalten"],["ihr","unterhaltet"],["sie/Sie","unterhalten"]],
+    de:"Wir haben uns über das Fußballspiel unterhalten.", en:"We talked about the football match." },
+  { v:"unternehmen", pp2:"unternommen", type:"irreg", case_:"acc", meaning:"to undertake / do something",
+    conj:[["ich","unternehme"],["du","unternimmst"],["er/sie/es","unternimmt"],["wir","unternehmen"],["ihr","unternehmt"],["sie/Sie","unternehmen"]],
+    de:"Wollen wir heute Abend etwas unternehmen?", en:"Shall we do something this evening?" },
+  { v:"untersuchen", pp2:"untersucht", type:"reg", case_:"acc", meaning:"to examine / investigate",
+    conj:[["ich","untersuche"],["du","untersuchst"],["er/sie/es","untersucht"],["wir","untersuchen"],["ihr","untersucht"],["sie/Sie","untersuchen"]],
+    de:"Der Arzt hat mich untersucht.", en:"The doctor examined me." },
+  { v:"verletzen", pp2:"verletzt", type:"reg", case_:"acc", meaning:"to injure oneself",
+    refl:true,
+    conj:[["ich","verletze"],["du","verletzt"],["er/sie/es","verletzt"],["wir","verletzen"],["ihr","verletzt"],["sie/Sie","verletzen"]],
+    de:"Haben Sie sich verletzt?", en:"Have you injured yourself?" },
+  { v:"verlieben", pp2:"verliebt", type:"reg", case_:"acc", meaning:"to fall in love (with)",
+    refl:true,
+    conj:[["ich","verliebe"],["du","verliebst"],["er/sie/es","verliebt"],["wir","verlieben"],["ihr","verliebt"],["sie/Sie","verlieben"]],
+    de:"Ich bin total verliebt.", en:"I'm totally in love." },
+  // Separable verbs
+  { v:"anrufen", pp2:"angerufen", type:"sep", case_:"acc", meaning:"to call (phone)",
+    conj:[["ich","rufe … an"],["du","rufst … an"],["er/sie/es","ruft … an"],["wir","rufen … an"],["ihr","ruft … an"],["sie/Sie","rufen … an"]],
+    de:"Ich rufe meinen Bruder an.", en:"I call my brother." },
+  { v:"aufmachen", pp2:"aufgemacht", type:"sep", case_:"acc", meaning:"to open",
+    conj:[["ich","mache … auf"],["du","machst … auf"],["er/sie/es","macht … auf"],["wir","machen … auf"],["ihr","macht … auf"],["sie/Sie","machen … auf"]],
+    de:"Er macht das Fenster auf.", en:"He opens the window." },
+  { v:"zumachen", pp2:"zugemacht", type:"sep", case_:"acc", meaning:"to close",
+    conj:[["ich","mache … zu"],["du","machst … zu"],["er/sie/es","macht … zu"],["wir","machen … zu"],["ihr","macht … zu"],["sie/Sie","machen … zu"]],
+    de:"Sie macht die Tür zu.", en:"She closes the door." },
+  { v:"einladen", pp2:"eingeladen", type:"sep", case_:"acc", meaning:"to invite",
+    conj:[["ich","lade … ein"],["du","lädst … ein"],["er/sie/es","lädt … ein"],["wir","laden … ein"],["ihr","ladet … ein"],["sie/Sie","laden … ein"]],
+    de:"Ich lade dich ein.", en:"I invite you." },
+  { v:"anziehen", pp2:"angezogen", type:"sep", case_:"acc", meaning:"to get dressed",
+    refl:true,
+    conj:[["ich","ziehe … an"],["du","ziehst … an"],["er/sie/es","zieht … an"],["wir","ziehen … an"],["ihr","zieht … an"],["sie/Sie","ziehen … an"]],
+    de:"Er zieht den Mantel an.", en:"He puts on the coat." },
+  { v:"aufstehen", pp2:"aufgestanden", type:"sep", case_:"acc", meaning:"to get up",
+    conj:[["ich","stehe … auf"],["du","stehst … auf"],["er/sie/es","steht … auf"],["wir","stehen … auf"],["ihr","steht … auf"],["sie/Sie","stehen … auf"]],
+    de:"Ich stehe um 7 Uhr auf.", en:"I get up at 7 o'clock." },
+  { v:"einkaufen", pp2:"eingekauft", type:"sep", case_:"acc", meaning:"to go shopping",
+    conj:[["ich","kaufe … ein"],["du","kaufst … ein"],["er/sie/es","kauft … ein"],["wir","kaufen … ein"],["ihr","kauft … ein"],["sie/Sie","kaufen … ein"]],
+    de:"Ich muss noch für morgen einkaufen.", en:"I still need to do shopping for tomorrow." },
+  { v:"einpacken", pp2:"eingepackt", type:"sep", case_:"acc", meaning:"to pack / wrap",
+    conj:[["ich","packe … ein"],["du","packst … ein"],["er/sie/es","packt … ein"],["wir","packen … ein"],["ihr","packt … ein"],["sie/Sie","packen … ein"]],
+    de:"Soll ich Ihnen das als Geschenk einpacken?", en:"Shall I wrap that as a gift for you?" },
+  { v:"einsteigen", pp2:"eingestiegen", type:"sep", case_:"acc", meaning:"to get in / board",
+    conj:[["ich","steige … ein"],["du","steigst … ein"],["er/sie/es","steigt … ein"],["wir","steigen … ein"],["ihr","steigt … ein"],["sie/Sie","steigen … ein"]],
+    de:"Schnell, steig ein, der Zug fährt gleich ab!", en:"Quick, get in, the train is about to leave!" },
+  { v:"umsteigen", pp2:"umgestiegen", type:"sep", case_:"acc", meaning:"to change trains/bus",
+    conj:[["ich","steige … um"],["du","steigst … um"],["er/sie/es","steigt … um"],["wir","steigen … um"],["ihr","steigt … um"],["sie/Sie","steigen … um"]],
+    de:"Sie müssen in Mannheim umsteigen.", en:"You need to change trains in Mannheim." },
+  { v:"umziehen", pp2:"umgezogen", type:"sep", case_:"acc", meaning:"to get changed / move house",
+    refl:true,
+    conj:[["ich","ziehe … um"],["du","ziehst … um"],["er/sie/es","zieht … um"],["wir","ziehen … um"],["ihr","zieht … um"],["sie/Sie","ziehen … um"]],
+    de:"Nächsten Monat ziehen wir um.", en:"Next month we are moving house." },
+  { v:"aussteigen", pp2:"ausgestiegen", type:"sep", case_:"acc", meaning:"to get out / alight",
+    conj:[["ich","steige … aus"],["du","steigst … aus"],["er/sie/es","steigt … aus"],["wir","steigen … aus"],["ihr","steigt … aus"],["sie/Sie","steigen … aus"]],
+    de:"Wo müssen wir aussteigen?", en:"Where do we need to get off?" },
+  { v:"aufhören", pp2:"aufgehört", type:"sep", case_:"acc", meaning:"to stop / cease",
+    conj:[["ich","höre … auf"],["du","hörst … auf"],["er/sie/es","hört … auf"],["wir","hören … auf"],["ihr","hört … auf"],["sie/Sie","hören … auf"]],
+    de:"Kannst du bitte damit aufhören?", en:"Can you please stop that?" },
+  { v:"aufpassen", pp2:"aufgepasst", type:"sep", case_:"acc", meaning:"to pay attention / watch out",
+    conj:[["ich","passe … auf"],["du","passt … auf"],["er/sie/es","passt … auf"],["wir","passen … auf"],["ihr","passt … auf"],["sie/Sie","passen … auf"]],
+    de:"Pass auf, der Teller fällt!", en:"Watch out, the plate is falling!" },
+  { v:"aufräumen", pp2:"aufgeräumt", type:"sep", case_:"acc", meaning:"to tidy up",
+    conj:[["ich","räume … auf"],["du","räumst … auf"],["er/sie/es","räumt … auf"],["wir","räumen … auf"],["ihr","räumt … auf"],["sie/Sie","räumen … auf"]],
+    de:"Die Kinder müssen ihr Zimmer aufräumen.", en:"The children need to tidy their room." },
+  { v:"ausfüllen", pp2:"ausgefüllt", type:"sep", case_:"acc", meaning:"to fill in a form",
+    conj:[["ich","fülle … aus"],["du","füllst … aus"],["er/sie/es","füllt … aus"],["wir","füllen … aus"],["ihr","füllt … aus"],["sie/Sie","füllen … aus"]],
+    de:"Füllen Sie bitte dieses Formular aus!", en:"Please fill in this form!" },
+  { v:"ausgeben", pp2:"ausgegeben", type:"sep", case_:"acc", meaning:"to spend money",
+    conj:[["ich","gebe … aus"],["du","gibst … aus"],["er/sie/es","gibt … aus"],["wir","geben … aus"],["ihr","gebt … aus"],["sie/Sie","geben … aus"]],
+    de:"Agata gibt viel Geld für Bücher aus.", en:"Agata spends a lot of money on books." },
+  { v:"ausgehen", pp2:"ausgegangen", type:"sep", case_:"acc", meaning:"to go out",
+    conj:[["ich","gehe … aus"],["du","gehst … aus"],["er/sie/es","geht … aus"],["wir","gehen … aus"],["ihr","geht … aus"],["sie/Sie","gehen … aus"]],
+    de:"Gehen wir am Freitag zusammen aus?", en:"Shall we go out together on Friday?" },
+  { v:"ausruhen", pp2:"ausgeruht", type:"sep", case_:"acc", meaning:"to rest / have a rest",
+    refl:true,
+    conj:[["ich","ruhe … aus"],["du","ruhst … aus"],["er/sie/es","ruht … aus"],["wir","ruhen … aus"],["ihr","ruht … aus"],["sie/Sie","ruhen … aus"]],
+    de:"Ruh dich erst mal aus!", en:"Have a rest first!" },
+  { v:"aussehen", pp2:"ausgesehen", type:"sep", case_:"acc", meaning:"to look / appear",
+    conj:[["ich","sehe … aus"],["du","siehst … aus"],["er/sie/es","sieht … aus"],["wir","sehen … aus"],["ihr","seht … aus"],["sie/Sie","sehen … aus"]],
+    de:"Wie sieht er aus? – Groß und blond.", en:"What does he look like? – Tall and blond." },
+  { v:"abgeben", pp2:"abgegeben", type:"sep", case_:"acc", meaning:"to hand in / give",
+    conj:[["ich","gebe … ab"],["du","gibst … ab"],["er/sie/es","gibt … ab"],["wir","geben … ab"],["ihr","gebt … ab"],["sie/Sie","geben … ab"]],
+    de:"Ich muss meinen Schlüssel an der Rezeption abgeben.", en:"I need to hand in my key at reception." },
+  { v:"abholen", pp2:"abgeholt", type:"sep", case_:"acc", meaning:"to pick up / collect",
+    conj:[["ich","hole … ab"],["du","holst … ab"],["er/sie/es","holt … ab"],["wir","holen … ab"],["ihr","holt … ab"],["sie/Sie","holen … ab"]],
+    de:"Wir müssen noch meinen Bruder abholen.", en:"We still need to pick up my brother." },
+  { v:"abschließen", pp2:"abgeschlossen", type:"sep", case_:"acc", meaning:"to lock / complete",
+    conj:[["ich","schließe … ab"],["du","schließt … ab"],["er/sie/es","schließt … ab"],["wir","schließen … ab"],["ihr","schließt … ab"],["sie/Sie","schließen … ab"]],
+    de:"Hast du die Tür abgeschlossen?", en:"Did you lock the door?" },
+  { v:"anfangen", pp2:"angefangen", type:"sep", case_:"acc", meaning:"to begin / start",
+    conj:[["ich","fange … an"],["du","fängst … an"],["er/sie/es","fängt … an"],["wir","fangen … an"],["ihr","fangt … an"],["sie/Sie","fangen … an"]],
+    de:"Der Unterricht fängt gleich an.", en:"The lesson is about to begin." },
+  { v:"ankommen", pp2:"angekommen", type:"sep", case_:"acc", meaning:"to arrive",
+    conj:[["ich","komme … an"],["du","kommst … an"],["er/sie/es","kommt … an"],["wir","kommen … an"],["ihr","kommt … an"],["sie/Sie","kommen … an"]],
+    de:"Wann kommt dieser Zug in Hamburg an?", en:"When does this train arrive in Hamburg?" },
+  { v:"anmachen", pp2:"angemacht", type:"sep", case_:"acc", meaning:"to switch on / turn on",
+    conj:[["ich","mache … an"],["du","machst … an"],["er/sie/es","macht … an"],["wir","machen … an"],["ihr","macht … an"],["sie/Sie","machen … an"]],
+    de:"Mach bitte das Licht an!", en:"Please turn on the light!" },
+  { v:"anmelden", pp2:"angemeldet", type:"sep", case_:"acc", meaning:"to register / sign up",
+    refl:true,
+    conj:[["ich","melde … an"],["du","meldest … an"],["er/sie/es","meldet … an"],["wir","melden … an"],["ihr","meldet … an"],["sie/Sie","melden … an"]],
+    de:"Wo kann ich mich anmelden?", en:"Where can I register?" },
+  { v:"ansehen", pp2:"angesehen", type:"sep", case_:"acc", meaning:"to look at / watch",
+    conj:[["ich","sehe … an"],["du","siehst … an"],["er/sie/es","sieht … an"],["wir","sehen … an"],["ihr","seht … an"],["sie/Sie","sehen … an"]],
+    de:"Darf ich eure Urlaubsfotos ansehen?", en:"May I look at your holiday photos?" },
+  { v:"eintragen", pp2:"eingetragen", type:"sep", case_:"acc", meaning:"to enter / write in",
+    conj:[["ich","trage … ein"],["du","trägst … ein"],["er/sie/es","trägt … ein"],["wir","tragen … ein"],["ihr","tragt … ein"],["sie/Sie","tragen … ein"]],
+    de:"Tragen Sie sich bitte in diese Liste ein!", en:"Please enter yourself on this list!" },
+  { v:"fernsehen", pp2:"ferngesehen", type:"sep", case_:"acc", meaning:"to watch TV",
+    conj:[["ich","sehe … fern"],["du","siehst … fern"],["er/sie/es","sieht … fern"],["wir","sehen … fern"],["ihr","seht … fern"],["sie/Sie","sehen … fern"]],
+    de:"Lass uns heute Abend mal fernsehen.", en:"Let's watch TV this evening." },
+  { v:"herstellen", pp2:"hergestellt", type:"sep", case_:"acc", meaning:"to produce / manufacture",
+    conj:[["ich","stelle … her"],["du","stellst … her"],["er/sie/es","stellt … her"],["wir","stellen … her"],["ihr","stellt … her"],["sie/Sie","stellen … her"]],
+    de:"In unserer Firma stellen wir Möbel her.", en:"In our company we manufacture furniture." },
+  { v:"herunterladen", pp2:"heruntergeladen", type:"sep", case_:"acc", meaning:"to download",
+    conj:[["ich","lade … herunter"],["du","lädst … herunter"],["er/sie/es","lädt … herunter"],["wir","laden … herunter"],["ihr","ladet … herunter"],["sie/Sie","laden … herunter"]],
+    de:"Er lädt die Musik aus dem Internet herunter.", en:"He downloads the music from the internet." },
+  { v:"stattfinden", pp2:"stattgefunden", type:"sep", case_:"acc", meaning:"to take place",
+    conj:[["ich","finde … statt"],["du","findest … statt"],["er/sie/es","findet … statt"],["wir","finden … statt"],["ihr","findet … statt"],["sie/Sie","finden … statt"]],
+    de:"Das Spiel findet auch bei Regen statt.", en:"The game takes place even in rain." },
+  { v:"spazieren gehen", pp2:"spazieren gegangen", type:"sep", case_:"acc", meaning:"to go for a walk",
+    conj:[["ich","gehe spazieren"],["du","gehst spazieren"],["er/sie/es","geht spazieren"],["wir","gehen spazieren"],["ihr","geht spazieren"],["sie/Sie","gehen spazieren"]],
+    de:"Wir gehen sonntags immer spazieren.", en:"We always go for a walk on Sundays." },
+  { v:"unterschreiben", pp2:"unterschrieben", type:"irreg", case_:"acc", meaning:"to sign",
+    conj:[["ich","unterschreibe"],["du","unterschreibst"],["er/sie/es","unterschreibt"],["wir","unterschreiben"],["ihr","unterschreibt"],["sie/Sie","unterschreiben"]],
+    de:"Wo muss ich unterschreiben?", en:"Where do I need to sign?" },
+  { v:"wehtun", pp2:"wehgetan", type:"sep", case_:"acc", meaning:"to hurt / ache",
+    conj:[["ich","tue … weh"],["du","tust … weh"],["er/sie/es","tut … weh"],["wir","tun … weh"],["ihr","tut … weh"],["sie/Sie","tun … weh"]],
+    de:"Mein Rücken tut weh.", en:"My back hurts." },
+  { v:"teilnehmen", pp2:"teilgenommen", type:"sep", case_:"acc", meaning:"to participate",
+    conj:[["ich","nehme … teil"],["du","nimmst … teil"],["er/sie/es","nimmt … teil"],["wir","nehmen … teil"],["ihr","nehmt … teil"],["sie/Sie","nehmen … teil"]],
+    de:"Ich möchte an dem Tanzkurs teilnehmen.", en:"I'd like to participate in the dance course." },
+  // ─── MODAL VERBS ─────────────────────────────────────
+  { v:"können", pp2:"gekonnt", type:"modal", case_:"acc", meaning:"can / to be able to",
+    conj:[["ich","kann"],["du","kannst"],["er/sie/es","kann"],["wir","können"],["ihr","könnt"],["sie/Sie","können"]],
+    de:"Ich kann Deutsch sprechen.", en:"I can speak German.",
+    note:"Konjunktiv II: könnte. Used for ability and polite requests. PP2 as modal: hat … können (not gekonnt)." },
+  { v:"wollen", pp2:"gewollt", type:"modal", case_:"acc", meaning:"to want to",
+    conj:[["ich","will"],["du","willst"],["er/sie/es","will"],["wir","wollen"],["ihr","wollt"],["sie/Sie","wollen"]],
+    de:"Sie will einen Kaffee.", en:"She wants a coffee.",
+    note:"Konjunktiv II: wollte. Expresses intention or strong desire. PP2 as modal: hat … wollen." },
+  { v:"müssen", pp2:"gemusst", type:"modal", case_:"acc", meaning:"must / to have to",
+    conj:[["ich","muss"],["du","musst"],["er/sie/es","muss"],["wir","müssen"],["ihr","müsst"],["sie/Sie","müssen"]],
+    de:"Ich muss die Hausaufgaben machen.", en:"I must do the homework.",
+    note:"Konjunktiv II: müsste. Expresses necessity or obligation. PP2 as modal: hat … müssen." },
+  { v:"möchten", pp2:"gemocht", type:"modal", case_:"acc", meaning:"would like to",
+    conj:[["ich","möchte"],["du","möchtest"],["er/sie/es","möchte"],["wir","möchten"],["ihr","möchtet"],["sie/Sie","möchten"]],
+    de:"Er möchte einen Tee.", en:"He would like a tea.",
+    note:"möchten is the Konjunktiv II of mögen. Used for polite wishes. No Präteritum form — use wollte instead." },
+  { v:"dürfen", pp2:"gedurft", type:"modal", case_:"acc", meaning:"may / to be allowed to",
+    conj:[["ich","darf"],["du","darfst"],["er/sie/es","darf"],["wir","dürfen"],["ihr","dürft"],["sie/Sie","dürfen"]],
+    de:"Man darf hier nicht rauchen.", en:"One may not smoke here.",
+    note:"Konjunktiv II: dürfte. Expresses permission or prohibition. PP2 as modal: hat … dürfen." },
+  { v:"sollen", pp2:"gesollt", type:"modal", case_:"acc", meaning:"should / to be supposed to",
+    conj:[["ich","soll"],["du","sollst"],["er/sie/es","soll"],["wir","sollen"],["ihr","sollt"],["sie/Sie","sollen"]],
+    de:"Du sollst das Buch lesen.", en:"You should read the book.",
+    note:"Konjunktiv II: sollte. Expresses obligation set by others or advice. PP2 as modal: hat … sollen." },
+  { v:"mögen", pp2:"gemocht", type:"modal", case_:"acc", meaning:"to like",
+    conj:[["ich","mag"],["du","magst"],["er/sie/es","mag"],["wir","mögen"],["ihr","mögt"],["sie/Sie","mögen"]],
+    de:"Ich mag keine Süßigkeiten.", en:"I don't like sweets.",
+    note:"Konjunktiv II: möchte (= would like). Expresses liking. Also used as full verb without infinitive." },
+  // ─── DATIV ───────────────────────────────────────────
+  { v:"helfen", pp2:"geholfen", type:"irreg", case_:"dat", meaning:"to help",
+    conj:[["ich","helfe"],["du","hilfst"],["er/sie/es","hilft"],["wir","helfen"],["ihr","helft"],["sie/Sie","helfen"]],
+    de:"Ich helfe meiner Mutter.", en:"I help my mother." },
+  { v:"danken", pp2:"gedankt", type:"reg", case_:"dat", meaning:"to thank",
+    conj:[["ich","danke"],["du","dankst"],["er/sie/es","dankt"],["wir","danken"],["ihr","dankt"],["sie/Sie","danken"]],
+    de:"Ich danke dir.", en:"I thank you." },
+  { v:"gefallen", pp2:"gefallen", type:"irreg", case_:"dat", meaning:"to please / to like (reversed subject)",
+    conj:[["ich","gefalle"],["du","gefällst"],["er/sie/es","gefällt"],["wir","gefallen"],["ihr","gefallt"],["sie/Sie","gefallen"]],
+    de:"Das Buch gefällt mir.", en:"I like the book. (lit: the book pleases me)",
+    note:"Subject and object are reversed: Das Buch (subject) gefällt mir (Dativ). Means I like it." },
+  { v:"gehören", pp2:"gehört", type:"reg", case_:"dat", meaning:"to belong to",
+    conj:[["ich","gehöre"],["du","gehörst"],["er/sie/es","gehört"],["wir","gehören"],["ihr","gehört"],["sie/Sie","gehören"]],
+    de:"Das Fahrrad gehört mir.", en:"The bike belongs to me." },
+  { v:"folgen", pp2:"gefolgt", type:"reg", case_:"dat", meaning:"to follow",
+    conj:[["ich","folge"],["du","folgst"],["er/sie/es","folgt"],["wir","folgen"],["ihr","folgt"],["sie/Sie","folgen"]],
+    de:"Der Hund folgt dem Mann.", en:"The dog follows the man." },
+  { v:"passen", pp2:"gepasst", type:"reg", case_:"dat", meaning:"to fit / suit",
+    conj:[["ich","passe"],["du","passt"],["er/sie/es","passt"],["wir","passen"],["ihr","passt"],["sie/Sie","passen"]],
+    de:"Der Termin passt mir gut.", en:"The appointment suits me well." },
+  { v:"schmecken", pp2:"geschmeckt", type:"reg", case_:"dat", meaning:"to taste good to",
+    conj:[["ich","schmecke"],["du","schmeckst"],["er/sie/es","schmeckt"],["wir","schmecken"],["ihr","schmeckt"],["sie/Sie","schmecken"]],
+    de:"Das Essen schmeckt mir.", en:"The food tastes good to me." },
+  { v:"fehlen", pp2:"gefehlt", type:"reg", case_:"dat", meaning:"to be missing / to miss",
+    conj:[["ich","fehle"],["du","fehlst"],["er/sie/es","fehlt"],["wir","fehlen"],["ihr","fehlt"],["sie/Sie","fehlen"]],
+    de:"Du fehlst mir.", en:"I miss you. (lit: you are missing to me)" },
+  { v:"antworten", pp2:"geantwortet", type:"reg", case_:"dat", meaning:"to answer a person",
+    conj:[["ich","antworte"],["du","antwortest"],["er/sie/es","antwortet"],["wir","antworten"],["ihr","antwortet"],["sie/Sie","antworten"]],
+    de:"Ich antworte dem Lehrer.", en:"I answer the teacher." },
+  { v:"glauben", pp2:"geglaubt", type:"reg", case_:"dat", meaning:"to believe a person",
+    conj:[["ich","glaube"],["du","glaubst"],["er/sie/es","glaubt"],["wir","glauben"],["ihr","glaubt"],["sie/Sie","glauben"]],
+    de:"Ich glaube dir.", en:"I believe you." },
+  { v:"gratulieren", pp2:"gratuliert", type:"reg", case_:"dat", meaning:"to congratulate",
+    conj:[["ich","gratuliere"],["du","gratulierst"],["er/sie/es","gratuliert"],["wir","gratulieren"],["ihr","gratuliert"],["sie/Sie","gratulieren"]],
+    de:"Ich gratuliere dir zum Geburtstag.", en:"I congratulate you on your birthday." },
+  { v:"passieren", pp2:"passiert", type:"reg", case_:"dat", meaning:"to happen to someone",
+    conj:[["ich","passiere"],["du","passierst"],["er/sie/es","passiert"],["wir","passieren"],["ihr","passiert"],["sie/Sie","passieren"]],
+    de:"Was ist dir passiert?", en:"What happened to you?" },
+  { v:"zuhören", pp2:"zugehört", type:"sep", case_:"dat", meaning:"to listen to someone",
+    conj:[["ich","höre … zu"],["du","hörst … zu"],["er/sie/es","hört … zu"],["wir","hören … zu"],["ihr","hört … zu"],["sie/Sie","hören … zu"]],
+    de:"Hör mir doch mal zu!", en:"Just listen to me!" },
+  // ─── AKKUSATIV + DATIV ───────────────────────────────
+  { v:"geben", pp2:"gegeben", type:"irreg", case_:"both", meaning:"to give",
+    conj:[["ich","gebe"],["du","gibst"],["er/sie/es","gibt"],["wir","geben"],["ihr","gebt"],["sie/Sie","geben"]],
+    de:"Ich gebe dem Kind (Dat) einen Ball (Akk).", en:"I give the child a ball." },
+  { v:"bringen", pp2:"gebracht", type:"irreg", case_:"both", meaning:"to bring",
+    conj:[["ich","bringe"],["du","bringst"],["er/sie/es","bringt"],["wir","bringen"],["ihr","bringt"],["sie/Sie","bringen"]],
+    de:"Er bringt seiner Mutter (Dat) Blumen (Akk).", en:"He brings his mother flowers." },
+  { v:"zeigen", pp2:"gezeigt", type:"reg", case_:"both", meaning:"to show",
+    conj:[["ich","zeige"],["du","zeigst"],["er/sie/es","zeigt"],["wir","zeigen"],["ihr","zeigt"],["sie/Sie","zeigen"]],
+    de:"Sie zeigt mir (Dat) das Foto (Akk).", en:"She shows me the photo." },
+  { v:"schicken", pp2:"geschickt", type:"reg", case_:"both", meaning:"to send",
+    conj:[["ich","schicke"],["du","schickst"],["er/sie/es","schickt"],["wir","schicken"],["ihr","schickt"],["sie/Sie","schicken"]],
+    de:"Ich schicke meiner Freundin (Dat) eine Karte (Akk).", en:"I send my friend a card." },
+  { v:"erklären", pp2:"erklärt", type:"reg", case_:"both", meaning:"to explain",
+    conj:[["ich","erkläre"],["du","erklärst"],["er/sie/es","erklärt"],["wir","erklären"],["ihr","erklärt"],["sie/Sie","erklären"]],
+    de:"Der Lehrer erklärt den Schülern (Dat) die Aufgabe (Akk).", en:"The teacher explains the task to the students." },
+  { v:"sagen", pp2:"gesagt", type:"reg", case_:"both", meaning:"to say / tell",
+    conj:[["ich","sage"],["du","sagst"],["er/sie/es","sagt"],["wir","sagen"],["ihr","sagt"],["sie/Sie","sagen"]],
+    de:"Er sagt mir (Dat) die Wahrheit (Akk).", en:"He tells me the truth." },
+  { v:"empfehlen", pp2:"empfohlen", type:"irreg", case_:"both", meaning:"to recommend",
+    conj:[["ich","empfehle"],["du","empfiehlst"],["er/sie/es","empfiehlt"],["wir","empfehlen"],["ihr","empfehlt"],["sie/Sie","empfehlen"]],
+    de:"Ich empfehle dir (Dat) dieses Restaurant (Akk).", en:"I recommend this restaurant to you." },
+  { v:"vorstellen", pp2:"vorgestellt", type:"sep", case_:"both", meaning:"to introduce oneself / imagine",
+    refl:true,
+    conj:[["ich","stelle … vor"],["du","stellst … vor"],["er/sie/es","stellt … vor"],["wir","stellen … vor"],["ihr","stellt … vor"],["sie/Sie","stellen … vor"]],
+    de:"Ich stelle dir (Dat) meinen Freund (Akk) vor.", en:"I introduce my friend to you." },
+  { v:"mitbringen", pp2:"mitgebracht", type:"sep", case_:"both", meaning:"to bring along",
+    conj:[["ich","bringe … mit"],["du","bringst … mit"],["er/sie/es","bringt … mit"],["wir","bringen … mit"],["ihr","bringt … mit"],["sie/Sie","bringen … mit"]],
+    de:"Er bringt ihr (Dat) Schokolade (Akk) mit.", en:"He brings her chocolate." },
+  { v:"leihen", pp2:"geliehen", type:"irreg", case_:"both", meaning:"to lend to someone",
+    conj:[["ich","leihe"],["du","leihst"],["er/sie/es","leiht"],["wir","leihen"],["ihr","leiht"],["sie/Sie","leihen"]],
+    de:"Ich leihe dir (Dat) mein Fahrrad (Akk).", en:"I lend you my bike." },
+  { v:"schenken", pp2:"geschenkt", type:"reg", case_:"both", meaning:"to give as a gift",
+    conj:[["ich","schenke"],["du","schenkst"],["er/sie/es","schenkt"],["wir","schenken"],["ihr","schenkt"],["sie/Sie","schenken"]],
+    de:"Er schenkt seiner Freundin (Dat) Rosen (Akk).", en:"He gives his girlfriend roses as a gift." },
+  { v:"wünschen", pp2:"gewünscht", type:"reg", case_:"both", meaning:"to wish someone something",
+    conj:[["ich","wünsche"],["du","wünschst"],["er/sie/es","wünscht"],["wir","wünschen"],["ihr","wünscht"],["sie/Sie","wünschen"]],
+    de:"Ich wünsche dir (Dat) viel Glück (Akk).", en:"I wish you good luck." },
+  // ─── REFLEXIVE VERBS (new entries) ──────────────────────────────────────
+  { v:"sich erkälten", pp2:"erkältet", type:"reg", case_:"acc", meaning:"to catch a cold",
+    refl:true,
+    conj:[["ich erkälte","mich"],["du erkältest","dich"],["er/sie/es erkältet","sich"],["wir erkälten","uns"],["ihr erkältet","euch"],["sie/Sie erkälten","sich"]],
+    de:"Lisa ist erkältet. Sie kann nicht zur Schule gehen.", en:"Lisa has a cold. She can't go to school.",
+    note:"Always reflexive. Partizip II used as adjective: erkältet sein = to have a cold." },
+  { v:"sich interessieren", pp2:"interessiert", type:"reg", case_:"acc", meaning:"to be interested (in)",
+    refl:true,
+    conj:[["ich interessiere","mich"],["du interessierst","dich"],["er/sie/es interessiert","sich"],["wir interessieren","uns"],["ihr interessiert","euch"],["sie/Sie interessieren","sich"]],
+    de:"Ich interessiere mich für Fußball.", en:"I am interested in football.",
+    note:"Always followed by für + Akkusativ: sich interessieren für + Akk." },
+  { v:"sich schneiden", pp2:"geschnitten", type:"irreg", case_:"acc", meaning:"to cut oneself",
+    refl:true,
+    conj:[["ich schneide","mich"],["du schneidest","dich"],["er/sie/es schneidet","sich"],["wir schneiden","uns"],["ihr schneidet","euch"],["sie/Sie schneiden","sich"]],
+    de:"Ich habe mich geschnitten!", en:"I cut myself!",
+    note:"Non-reflexive: schneiden = to cut (something). Reflexive: sich schneiden = to cut oneself." },
+  { v:"sich verabreden", pp2:"verabredet", type:"reg", case_:"acc", meaning:"to arrange to meet / make a date",
+    refl:true,
+    conj:[["ich verabrede","mich"],["du verabredest","dich"],["er/sie/es verabredet","sich"],["wir verabreden","uns"],["ihr veabredet","euch"],["sie/Sie verabreden","sich"]],
+    de:"Ich bin mit meiner Freundin verabredet.", en:"I have arranged to meet my friend.",
+    note:"Often used as adjective: verabredet sein = to have an appointment / be meeting someone." },
+  { v:"sich ausziehen", pp2:"ausgezogen", type:"sep", case_:"acc", meaning:"to get undressed / take off clothes",
+    refl:true,
+    conj:[["ich ziehe","mich aus"],["du ziehst","dich aus"],["er/sie/es zieht","sich aus"],["wir ziehen","uns aus"],["ihr zieht","euch aus"],["sie/Sie ziehen","sich aus"]],
+    de:"Die Kinder ziehen sich aus und gehen ins Bett.", en:"The children get undressed and go to bed.",
+    note:"Opposite: sich anziehen = to get dressed. Non-reflexive: ausziehen = to move out." },
+  { v:"sich vorbereiten", pp2:"vorbereitet", type:"sep", case_:"acc", meaning:"to prepare (oneself) for",
+    refl:true,
+    conj:[["ich bereite","mich vor"],["du bereitest","dich vor"],["er/sie/es bereitet","sich vor"],["wir bereiten","uns vor"],["ihr bereitet","euch vor"],["sie/Sie bereiten","sich vor"]],
+    de:"Ich muss mich auf meine Prüfung vorbereiten.", en:"I need to prepare for my exam.",
+    note:"Always followed by auf + Akkusativ: sich vorbereiten auf + Akk." },
+  // ─── WURDEN (Präteritum of werden) ───────────────────────────────────────
+  { v:"wurden", pp2:"— (Präteritum form)", type:"irreg", case_:"acc", meaning:"became / were (Präteritum of werden)",
+    conj:[["ich","wurde"],["du","wurdest"],["er/sie/es","wurde"],["wir","wurden"],["ihr","wurdet"],["sie/Sie","wurden"]],
+    de:"Er wurde Arzt. / Die Briefe wurden geschrieben.", en:"He became a doctor. / The letters were written.",
+    note:"Präteritum of werden. Used to form: (1) simple past of werden — Er wurde Arzt; (2) Passiv (passive voice) — Die Tür wurde geöffnet = The door was opened." },
+
+];
+
+const CASE_LABELS = { acc:"Akkusativ", dat:"Dativ", both:"Akk+Dat" };
+const TYPE_LABELS  = { reg:"Regular", irreg:"Irregular", sep:"Separable", modal:"Modal" };
+const CASE_ORDER   = { acc:0, dat:1, both:2 };
+const SECTION_NAMES = { acc:"🔵 Akkusativ Verbs", dat:"🟢 Dativ Verbs", both:"🟠 Akkusativ + Dativ Verbs" };
+
+let activeFilter = 'all';
+
+function setFilter(f, btn) {
+  activeFilter = f;
+  document.querySelectorAll('.f').forEach(b => {
+    b.className = 'f';
+  });
+  const cls = f === 'all' ? 'active-all' : f === 'acc' ? 'active-acc' : f === 'dat' ? 'active-dat'
+    : f === 'both' ? 'active-both' : f === 'modal' ? 'active-modal' : f === 'sep' ? 'active-sep'
+    : f === 'irreg' ? 'active-irreg' : f === 'refl' ? 'active-refl' : 'active-reg';
+  btn.classList.add(cls);
+  render();
+}
+
+function render() {
+  const q = document.getElementById('search').value.toLowerCase().trim();
+  let verbs = VERBS.filter(v => {
+    if (activeFilter === 'all') return true;
+    if (['acc','dat','both'].includes(activeFilter)) return v.case_ === activeFilter;
+    return v.type === activeFilter;
+  }).filter(v => {
+    if (!q) return true;
+    return v.v.toLowerCase().includes(q) || v.meaning.toLowerCase().includes(q)
+      || v.pp2.toLowerCase().includes(q) || v.de.toLowerCase().includes(q);
+  });
+
+  document.getElementById('stats').textContent = `${verbs.length} verb${verbs.length !== 1 ? 's' : ''} shown`;
+
+  // Cheatsheet (only on full/modal view)
+  const cc = document.getElementById('cheat-container');
+  if (!q && (activeFilter === 'all' || activeFilter === 'modal')) {
+    cc.innerHTML = buildCheatsheet();
+  } else { cc.innerHTML = ''; }
+
+  // Group by case
+  const groups = { acc:[], dat:[], both:[] };
+  verbs.forEach(v => {
+    const g = ['acc','dat','both'].includes(v.case_) ? v.case_ : 'acc';
+    groups[g].push(v);
+  });
+
+  let html = '';
+  ['acc','dat','both'].forEach(g => {
+    if (!groups[g].length) return;
+    html += `<div class="section-label">${SECTION_NAMES[g]} (${groups[g].length})</div>`;
+    groups[g].forEach((v, i) => {
+      const id = `card-${g}-${i}`;
+      html += `
+      <div class="verb-card" id="${id}">
+        <div class="verb-head" onclick="toggle('${id}')">
+          <span class="verb-name">${v.v}</span>
+          <span class="verb-meaning">${v.meaning}</span>
+          <div class="badges">
+            <span class="badge b-${v.type}">${TYPE_LABELS[v.type]}</span>
+            <span class="badge b-${v.case_}">${CASE_LABELS[v.case_]}</span>
+            ${v.refl ? '<span class="badge b-refl">Reflexive</span>' : ''}
+          </div>
+          <span class="chevron">▶</span>
+        </div>
+        <div class="verb-body">
+          <div class="pp2-row">Partizip II: <strong>${v.pp2}</strong>${v.refl ? '&nbsp;&nbsp;·&nbsp;&nbsp;Reflexivpronomen: <strong>mich/dich/sich/uns/euch/sich</strong>' : ''}</div>
+          ${(function(){
+            const c = v.conj;
+            const fmt = (row) => v.refl && row[1] ? row[0] + ' <strong>' + row[1] + '</strong>' : (row[1] || row[0]);
+            const pro = (row) => v.refl && row[1] ? '' : row[0];
+            if(v.refl && c[0][1]) {
+              return '<table class="conj-table"><tr><th colspan="2">Form</th><th colspan="2">Form</th></tr>' +
+                '<tr><td class="pronoun" style="width:50%">' + c[0][0] + ' <strong>' + c[0][1] + '</strong></td><td></td>' +
+                '<td class="pronoun" style="width:50%">' + c[3][0] + ' <strong>' + c[3][1] + '</strong></td><td></td></tr>' +
+                '<tr><td class="pronoun">' + c[1][0] + ' <strong>' + c[1][1] + '</strong></td><td></td>' +
+                '<td class="pronoun">' + c[4][0] + ' <strong>' + c[4][1] + '</strong></td><td></td></tr>' +
+                '<tr><td class="pronoun">' + c[2][0] + ' <strong>' + c[2][1] + '</strong></td><td></td>' +
+                '<td class="pronoun">' + c[5][0] + ' <strong>' + c[5][1] + '</strong></td><td></td></tr>' +
+                '</table>';
+            }
+            return '<table class="conj-table"><tr><th>Pronoun</th><th>Form</th><th>Pronoun</th><th>Form</th></tr>' +
+              '<tr><td class="pronoun">' + c[0][0] + '</td><td class="form">' + c[0][1] + '</td>' +
+              '<td class="pronoun">' + c[3][0] + '</td><td class="form">' + c[3][1] + '</td></tr>' +
+              '<tr><td class="pronoun">' + c[1][0] + '</td><td class="form">' + c[1][1] + '</td>' +
+              '<td class="pronoun">' + c[4][0] + '</td><td class="form">' + c[4][1] + '</td></tr>' +
+              '<tr><td class="pronoun">' + c[2][0] + '</td><td class="form">' + c[2][1] + '</td>' +
+              '<td class="pronoun">' + c[5][0] + '</td><td class="form">' + c[5][1] + '</td></tr>' +
+              '</table>';
+          })()}
+          <div class="example-box">
+            <div class="example-de">${v.de}</div>
+            <div class="example-en">${v.en}</div>
+          </div>
+" + (v.note ? '<div class="note">💡 ' + v.note + '</div>' : '') + "
+        </div>
+      </div>`;
+    });
+  });
+
+  if (!html) html = '<div class="empty">No verbs found. Try a different search or filter.</div>';
+  document.getElementById('verb-list').innerHTML = html;
+}
+
+function toggle(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+
+function buildCheatsheet() {
+  return `
+  <div class="cheat" id="cheat">
+    <div class="cheat-head" onclick="document.getElementById('cheat').classList.toggle('open')">
+      📋 Quick Reference Cheatsheet <span class="chevron">▶</span>
+    </div>
+    <div class="cheat-body">
+      <div class="cheat-grid">
+        <div class="cheat-section">
+          <h4>Cases at a glance</h4>
+          <table class="cheat-table">
+            <tr><th>Case</th><th>m / f / n / pl</th><th>Ask</th></tr>
+            <tr><td>Nominativ</td><td>der/die/das/die</td><td>Who acts?</td></tr>
+            <tr><td>Akkusativ</td><td>den/die/das/die</td><td>Wen/Was?</td></tr>
+            <tr><td>Dativ</td><td>dem/der/dem/den+m</td><td>Wem?</td></tr>
+          </table>
+        </div>
+        <div class="cheat-section">
+          <h4>Modal verbs summary</h4>
+          <table class="cheat-table">
+            <tr><th>Verb</th><th>ich/er</th><th>Meaning</th><th>K2</th></tr>
+            <tr><td>können</td><td>kann</td><td>can</td><td>könnte</td></tr>
+            <tr><td>wollen</td><td>will</td><td>want to</td><td>wollte</td></tr>
+            <tr><td>müssen</td><td>muss</td><td>must</td><td>müsste</td></tr>
+            <tr><td>möchten</td><td>möchte</td><td>would like</td><td>—</td></tr>
+            <tr><td>dürfen</td><td>darf</td><td>may</td><td>dürfte</td></tr>
+            <tr><td>sollen</td><td>soll</td><td>should</td><td>sollte</td></tr>
+            <tr><td>mögen</td><td>mag</td><td>to like</td><td>möchte</td></tr>
+          </table>
+        </div>
+        <div class="cheat-section">
+          <h4>Separable verb rules</h4>
+          <table class="cheat-table">
+            <tr><th>Tense</th><th>Rule</th><th>Example</th></tr>
+            <tr><td>Present</td><td>Prefix → end</td><td>Ich rufe an</td></tr>
+            <tr><td>Partizip II</td><td>ge- between</td><td>angerufen</td></tr>
+            <tr><td>Infinitive</td><td>Stays together</td><td>anrufen</td></tr>
+          </table>
+        </div>
+        <div class="cheat-section">
+          <h4>Common Dativ verbs</h4>
+          <div class="chip-list">
+            <span class="chip">helfen</span><span class="chip">danken</span>
+            <span class="chip">gefallen</span><span class="chip">gehören</span>
+            <span class="chip">folgen</span><span class="chip">passen</span>
+            <span class="chip">schmecken</span><span class="chip">fehlen</span>
+            <span class="chip">antworten</span><span class="chip">glauben</span>
+            <span class="chip">gratulieren</span><span class="chip">passieren</span>
+            <span class="chip">zuhören</span>
+          </div>
+        </div>
+        <div class="cheat-section" style="grid-column:1/-1">
+          <h4>Key irregular Partizip II forms</h4>
+          <table class="cheat-table">
+            <tr>
+              <th>Infinitiv</th><th>PP2</th>
+              <th>Infinitiv</th><th>PP2</th>
+              <th>Infinitiv</th><th>PP2</th>
+            </tr>
+            <tr><td>sein</td><td>gewesen</td><td>haben</td><td>gehabt</td><td>werden</td><td>geworden</td></tr>
+            <tr><td>gehen</td><td>gegangen</td><td>fahren</td><td>gefahren</td><td>laufen</td><td>gelaufen</td></tr>
+            <tr><td>essen</td><td>gegessen</td><td>trinken</td><td>getrunken</td><td>schlafen</td><td>geschlafen</td></tr>
+            <tr><td>sehen</td><td>gesehen</td><td>lesen</td><td>gelesen</td><td>nehmen</td><td>genommen</td></tr>
+            <tr><td>geben</td><td>gegeben</td><td>schreiben</td><td>geschrieben</td><td>sprechen</td><td>gesprochen</td></tr>
+            <tr><td>finden</td><td>gefunden</td><td>treffen</td><td>getroffen</td><td>helfen</td><td>geholfen</td></tr>
+            <tr><td>wissen</td><td>gewusst</td><td>denken</td><td>gedacht</td><td>bringen</td><td>gebracht</td></tr>
+            <tr><td>verlieren</td><td>verloren</td><td>verstehen</td><td>verstanden</td><td>bleiben</td><td>geblieben</td></tr>
+            <tr><td>waschen</td><td>gewaschen</td><td>tragen</td><td>getragen</td><td>sterben</td><td>gestorben</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+render();
+</script>
+</body>
+</html>
